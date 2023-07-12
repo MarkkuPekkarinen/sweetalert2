@@ -1,3 +1,31 @@
+## [11.7.16](https://github.com/sweetalert2/sweetalert2/compare/v11.7.15...v11.7.16) (2023-07-11)
+
+
+### Bug Fixes
+
+* avoid using navigator.userAgent and navigator.platform ([#2650](https://github.com/sweetalert2/sweetalert2/issues/2650)) ([3039432](https://github.com/sweetalert2/sweetalert2/commit/3039432e9e44b68ca523c04aeb8286ec0b5d0d61))
+
+## [11.7.15](https://github.com/sweetalert2/sweetalert2/compare/v11.7.14...v11.7.15) (2023-07-11)
+
+
+### Bug Fixes
+
+* rm addBottomPaddingForTallPopups, undo [#1993](https://github.com/sweetalert2/sweetalert2/issues/1993) ([#2649](https://github.com/sweetalert2/sweetalert2/issues/2649)) ([40752da](https://github.com/sweetalert2/sweetalert2/commit/40752da1924a88eb1eca0591b68d413fff45217b))
+
+## [11.7.14](https://github.com/sweetalert2/sweetalert2/compare/v11.7.13...v11.7.14) (2023-07-11)
+
+
+### Bug Fixes
+
+* id attr on checkbox ([#2648](https://github.com/sweetalert2/sweetalert2/issues/2648)) ([f90064b](https://github.com/sweetalert2/sweetalert2/commit/f90064bebb5d6867559848a1a90969899d8e84a8))
+
+## [11.7.13](https://github.com/sweetalert2/sweetalert2/compare/v11.7.12...v11.7.13) (2023-07-11)
+
+
+### Bug Fixes
+
+* Chrome audit violations ([#2647](https://github.com/sweetalert2/sweetalert2/issues/2647)) ([07e1e41](https://github.com/sweetalert2/sweetalert2/commit/07e1e41175c942a1fafc4c79148c927941f127a4))
+
 ## [11.7.12](https://github.com/sweetalert2/sweetalert2/compare/v11.7.11...v11.7.12) (2023-06-09)
 
 
