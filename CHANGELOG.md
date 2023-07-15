@@ -1,3 +1,17 @@
+## [11.7.18](https://github.com/sweetalert2/sweetalert2/compare/v11.7.17...v11.7.18) (2023-07-15)
+
+
+### Bug Fixes
+
+* check if texarea is still in document ([#2655](https://github.com/sweetalert2/sweetalert2/issues/2655)) ([6277fda](https://github.com/sweetalert2/sweetalert2/commit/6277fda672df3d14077d8d80fcb9c4630cb8e858))
+
+## [11.7.17](https://github.com/sweetalert2/sweetalert2/compare/v11.7.16...v11.7.17) (2023-07-15)
+
+
+### Bug Fixes
+
+* when resizing textarea take params.width into consideration ([#2654](https://github.com/sweetalert2/sweetalert2/issues/2654)) ([98b34a1](https://github.com/sweetalert2/sweetalert2/commit/98b34a1b76c9c4031d9d14a0d2938bfc40968d17))
+
 ## [11.7.16](https://github.com/sweetalert2/sweetalert2/compare/v11.7.15...v11.7.16) (2023-07-11)
 
 
