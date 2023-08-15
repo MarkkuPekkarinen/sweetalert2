@@ -1,3 +1,24 @@
+## [11.7.23](https://github.com/sweetalert2/sweetalert2/compare/v11.7.22...v11.7.23) (2023-08-15)
+
+
+### Bug Fixes
+
+* change footer's display flex -> block ([#2661](https://github.com/sweetalert2/sweetalert2/issues/2661)) ([c515e76](https://github.com/sweetalert2/sweetalert2/commit/c515e7664b3904a54aab79a43e58802e81f8bca2))
+
+## [11.7.22](https://github.com/sweetalert2/sweetalert2/compare/v11.7.21...v11.7.22) (2023-08-10)
+
+
+### Bug Fixes
+
+* **types:** rm generic from SweetAlertOptions to make it easier to read ([c3bf4cc](https://github.com/sweetalert2/sweetalert2/commit/c3bf4cc17c5d14d9f65393a939137330865e677a))
+
+## [11.7.21](https://github.com/sweetalert2/sweetalert2/compare/v11.7.20...v11.7.21) (2023-08-09)
+
+
+### Bug Fixes
+
+* **types:** add `SyncOrAsync` to `preConfirm` definition ([#2658](https://github.com/sweetalert2/sweetalert2/issues/2658)) ([98c3b5f](https://github.com/sweetalert2/sweetalert2/commit/98c3b5fb8141b286d51e6dde9b368f2dfd441a97))
+
 ## [11.7.20](https://github.com/sweetalert2/sweetalert2/compare/v11.7.19...v11.7.20) (2023-07-23)
 
 
