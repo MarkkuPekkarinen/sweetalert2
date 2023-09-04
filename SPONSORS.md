@@ -25,7 +25,6 @@ For all questions related to sponsorship please contact me via email sweetalert2
 <td align="center"><a href="https://istar.tips/"><img src="https://sweetalert2.github.io/images/sponsors/istartips.png" width="80"><br>iStarTips</a>
 <td align="center"><a href="https://refermate.com/"><img src="https://sweetalert2.github.io/images/sponsors/refermate.png" width="80"><br>Refermate</a>
 <td align="center"><a href="https://roboflow.com/"><img src="https://sweetalert2.github.io/images/sponsors/roboflow.png" width="80"><br>Roboflow</a>
-<td align="center"><a href="https://www.evguru.com.my/"><img src="https://sweetalert2.github.io/images/sponsors/evguru.png" width="80"><br>EvGuru EV Chargers</a></td>
 </tr>
 </table>
 <table>
@@ -50,15 +49,15 @@ NSFW Sponsors
 <table>
 <tr>
 <td align="center"><a href="SPONSORS.md#sponsors"><img src="https://sweetalert2.github.io/images/plus.png" width="80"><br>Become a NSFW sponsor</a></td>
+<td align="center"><a href="https://vlixa.com/"><img src="https://sweetalert2.github.io/images/sponsors/vlixa.png" width="80"><br>Vlixa</a></td>
+<td align="center"><a href="https://taboodude.com/"><img src="https://sweetalert2.github.io/images/sponsors/taboodude.png" width="80"><br>TabooDude</a></td>
 <td align="center"><a href="https://sexsitoys.com/lovense-games/"><img src="https://sweetalert2.github.io/images/sponsors/sexsitoys.jpg" width="80"><br>Sexsi Toys</a></td>
 <td align="center"><a href="https://www.cheapestsexdolls.com"><img src="https://sweetalert2.github.io/images/sponsors/cheapestsexdolls.png" width="80"><br>CheapestSexDolls</a></td>
-<td align="center"><a href="https://www.sexysexdoll.com/"><img src="https://sweetalert2.github.io/images/sponsors/sexysexdoll.png" width="80"><br>Sexy Sex Doll</a></td>
-<td align="center"><a href="https://www.bestblowjobmachines.com/"><img src="https://sweetalert2.github.io/images/sponsors/best-blowjob-machines.jpg" width="80"><br>Best Blowjob Machines</a></td>
 </tr>
 </table>
 <table>
 <tr>
-<td align="center"><a href="https://celebexposed.com/"><img src="https://sweetalert2.github.io/images/sponsors/celebexposed.jpg" width="80"><br>CelebExposed</a></td>
+<td align="center"><a href="https://www.bestblowjobmachines.com/"><img src="https://sweetalert2.github.io/images/sponsors/best-blowjob-machines.jpg" width="80"><br>Best Blowjob Machines</a></td>
 <td align="center"><a href="https://escortsear.ch/"><img src="https://sweetalert2.github.io/images/sponsors/escortsearch.jpg" width="80"><br>EscortSearch</a></td>
 <td align="center"><a href="https://nakedoll.com/"><img src="https://sweetalert2.github.io/images/sponsors/nakedoll.png" width="80"><br>NakeDoll</a></td>
 <td align="center"><a href="https://readysetcam.com/"><img src="https://sweetalert2.github.io/images/sponsors/readysetcam.png" width="80"><br>Ready Set Cam</a></td>
@@ -92,7 +91,6 @@ NSFW Sponsors
 <td align="center"><a href="https://www.lovedolltorso.com/female-torso-sex-doll/"><img src="https://sweetalert2.github.io/images/sponsors/lovedolltorso.png" width="80"><br>female torso sex doll</a></td>
 <td align="center"><a href="https://www.mymasturbators.com/"><img src="https://sweetalert2.github.io/images/sponsors/mymasturbators.png" width="80"><br>male masturbator</a></td>
 <td align="center"><a href="https://www.buypenispump.com/"><img src="https://sweetalert2.github.io/images/sponsors/buypenispump.png" width="80"><br>penis pump</a></td>
-<td align="center"><a href="https://toyhero.com/"><img src="https://sweetalert2.github.io/images/sponsors/toyhero.png" width="80"><br>Adult Toys</a></td>
 </tr>
 </table>
 <table>
