@@ -1,3 +1,26 @@
+## [11.7.31](https://github.com/sweetalert2/sweetalert2/compare/v11.7.30...v11.7.31) (2023-09-26)
+
+
+### Bug Fixes
+
+* **types:** make bindClickHandler()'s param optional ([de5f162](https://github.com/sweetalert2/sweetalert2/commit/de5f1620773798e8416089cfcea207c42aa040f5))
+
+## [11.7.30](https://github.com/sweetalert2/sweetalert2/compare/v11.7.29...v11.7.30) (2023-09-26)
+
+
+### Bug Fixes
+
+* **types:** add missing bindClickHandler() ([59a9613](https://github.com/sweetalert2/sweetalert2/commit/59a96132055e04e3e7085ffcdbe51590fba84c94))
+
+## [11.7.29](https://github.com/sweetalert2/sweetalert2/compare/v11.7.28...v11.7.29) (2023-09-25)
+
+
+### Bug Fixes
+
+* **types:** allow imageUrl to be null ([6e7915f](https://github.com/sweetalert2/sweetalert2/commit/6e7915ff75912e24ccb3a7fca1bc215c51f318b1))
+* **types:** allow returning false from inputValidator ([a3becd9](https://github.com/sweetalert2/sweetalert2/commit/a3becd99d1449c183b498f3015eb5c5bdd38ba44))
+* **types:** allow target to be null ([82a40d5](https://github.com/sweetalert2/sweetalert2/commit/82a40d5e961f1b76773c5bd773525e41de15a172))
+
 ## [11.7.28](https://github.com/sweetalert2/sweetalert2/compare/v11.7.27...v11.7.28) (2023-09-14)
 
 
