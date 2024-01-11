@@ -1,3 +1,38 @@
+## [11.10.3](https://github.com/sweetalert2/sweetalert2/compare/v11.10.2...v11.10.3) (2024-01-11)
+
+
+### Bug Fixes
+
+* rm unnecessary transform styles on success icon ([69c2372](https://github.com/sweetalert2/sweetalert2/commit/69c237281563dad020af3bb0771d695ccf6aff14)), closes [#2698](https://github.com/sweetalert2/sweetalert2/issues/2698)
+
+## [11.10.2](https://github.com/sweetalert2/sweetalert2/compare/v11.10.1...v11.10.2) (2023-12-27)
+
+
+### Bug Fixes
+
+* strict types domUtils.js ([3a963d4](https://github.com/sweetalert2/sweetalert2/commit/3a963d4dddd9bd00f6acdb9dd9803469532649dd))
+
+## [11.10.1](https://github.com/sweetalert2/sweetalert2/compare/v11.10.0...v11.10.1) (2023-11-19)
+
+
+### Bug Fixes
+
+* resolve swal promise when its dismissed by another swal ([#2689](https://github.com/sweetalert2/sweetalert2/issues/2689)) ([0b4329b](https://github.com/sweetalert2/sweetalert2/commit/0b4329b334500419dff7a0b2c4268ad8e49d21c9))
+
+# [11.10.0](https://github.com/sweetalert2/sweetalert2/compare/v11.9.1...v11.10.0) (2023-11-14)
+
+
+### Features
+
+* add animation: boolean param ([#2687](https://github.com/sweetalert2/sweetalert2/issues/2687)) ([048fc92](https://github.com/sweetalert2/sweetalert2/commit/048fc92280cfc7a42dbf58920f03fc2a2f09c922))
+
+## [11.9.1](https://github.com/sweetalert2/sweetalert2/compare/v11.9.0...v11.9.1) (2023-11-14)
+
+
+### Bug Fixes
+
+* inputValidator + input: 'file' ([#2686](https://github.com/sweetalert2/sweetalert2/issues/2686)) ([25197ec](https://github.com/sweetalert2/sweetalert2/commit/25197ec6028d92a725c181a63b2cd8895a03dbe0))
+
 # [11.9.0](https://github.com/sweetalert2/sweetalert2/compare/v11.8.0...v11.9.0) (2023-10-30)
 
 

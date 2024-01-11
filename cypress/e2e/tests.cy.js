@@ -486,6 +486,56 @@ describe('Miscellaneous tests', function () {
     })
   })
 
+  it('swal dismissed by another swal should resolve', (done) => {
+    Swal.fire().then((result) => {
+      expect(result).to.eql({
+        isDismissed: true,
+      })
+      done()
+    })
+    Swal.fire()
+  })
+
+  it('swal dismissed by another swal should resolve even when another swal was called after clickConfirm()', (done) => {
+    Swal.fire().then((result) => {
+      expect(result).to.eql({
+        value: true,
+        isConfirmed: true,
+        isDenied: false,
+        isDismissed: false,
+      })
+      done()
+    })
+    Swal.clickConfirm()
+    Swal.fire()
+  })
+
+  it('animation enabled', (done) => {
+    Swal.fire({
+      animation: true,
+      didOpen: () => {
+        setTimeout(() => {
+          expect(Array.from(Swal.getPopup().classList)).to.contain('swal2-show')
+          expect(Array.from(Swal.getContainer().classList)).not.to.contain('swal2-noanimation')
+          done()
+        }, SHOW_CLASS_TIMEOUT)
+      },
+    })
+  })
+
+  it('animation disabled', (done) => {
+    Swal.fire({
+      animation: false,
+      didOpen: () => {
+        setTimeout(() => {
+          expect(Array.from(Swal.getPopup().classList)).not.to.contain('swal2-show')
+          expect(Array.from(Swal.getContainer().classList)).to.contain('swal2-noanimation')
+          done()
+        }, SHOW_CLASS_TIMEOUT)
+      },
+    })
+  })
+
   it('params validation', () => {
     expect(Swal.isValidParameter('title')).to.be.true
     expect(Swal.isValidParameter('foobar')).to.be.false
