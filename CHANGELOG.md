@@ -1,3 +1,268 @@
+## [11.17.2](https://github.com/sweetalert2/sweetalert2/compare/v11.17.1...v11.17.2) (2025-02-16)
+
+
+### Bug Fixes
+
+* **types:** allow theme update ([4b8c4e2](https://github.com/sweetalert2/sweetalert2/commit/4b8c4e2d1ee01dae36870a01fbb3067615bd5d35))
+
+## [11.17.1](https://github.com/sweetalert2/sweetalert2/compare/v11.17.0...v11.17.1) (2025-02-16)
+
+
+### Bug Fixes
+
+* **types:** allow borderless theme ([8618e53](https://github.com/sweetalert2/sweetalert2/commit/8618e539acb8fc1a65aeb9f2c95fa4c8f0f0926f))
+
+# [11.17.0](https://github.com/sweetalert2/sweetalert2/compare/v11.16.1...v11.17.0) (2025-02-16)
+
+
+### Features
+
+* add borderless theme ([#2800](https://github.com/sweetalert2/sweetalert2/issues/2800)) ([31bc364](https://github.com/sweetalert2/sweetalert2/commit/31bc364be19e3f57ae84bafcb14296f8e9984af3))
+
+## [11.16.1](https://github.com/sweetalert2/sweetalert2/compare/v11.16.0...v11.16.1) (2025-02-14)
+
+
+### Bug Fixes
+
+* toast background color fixed to white in dark theme ([#2798](https://github.com/sweetalert2/sweetalert2/issues/2798)) ([33e248b](https://github.com/sweetalert2/sweetalert2/commit/33e248b25546d9ec6db0ac8f13b379f19e9721cd))
+
+# [11.16.0](https://github.com/sweetalert2/sweetalert2/compare/v11.15.10...v11.16.0) (2025-02-08)
+
+
+### Features
+
+* add built-in light/dark/auto themes ([#2796](https://github.com/sweetalert2/sweetalert2/issues/2796)) ([3f64e05](https://github.com/sweetalert2/sweetalert2/commit/3f64e0584c276f56e631a957fc56ae4c74214224))
+
+## [11.15.10](https://github.com/sweetalert2/sweetalert2/compare/v11.15.9...v11.15.10) (2025-01-03)
+
+
+### Bug Fixes
+
+* **kiss:** get rid of sass:color ([ef5ff13](https://github.com/sweetalert2/sweetalert2/commit/ef5ff132d65ed824be09cdce7538e29c4b364bda))
+
+## [11.15.9](https://github.com/sweetalert2/sweetalert2/compare/v11.15.8...v11.15.9) (2025-01-02)
+
+
+### Bug Fixes
+
+* **styles:** stop using sass:math, add $swal2-icon-border-width scss variable ([d0bf711](https://github.com/sweetalert2/sweetalert2/commit/d0bf7115e4e21dc8ce3df0740ea73b20463e9543))
+
+## [11.15.8](https://github.com/sweetalert2/sweetalert2/compare/v11.15.7...v11.15.8) (2025-01-02)
+
+
+### Bug Fixes
+
+* toast styles ([4dc809d](https://github.com/sweetalert2/sweetalert2/commit/4dc809dde42c83d96255ddcd9814eff39dc3d95a))
+
+## [11.15.7](https://github.com/sweetalert2/sweetalert2/compare/v11.15.6...v11.15.7) (2025-01-02)
+
+
+### Bug Fixes
+
+* style for toast icons ([812d6c5](https://github.com/sweetalert2/sweetalert2/commit/812d6c57b2cd22cd89857671979b8e6046376edd)), closes [#2792](https://github.com/sweetalert2/sweetalert2/issues/2792)
+
+## [11.15.6](https://github.com/sweetalert2/sweetalert2/compare/v11.15.5...v11.15.6) (2025-01-02)
+
+
+### Bug Fixes
+
+* get rid of SCSS mixins, one file for styles is what I need ([#2791](https://github.com/sweetalert2/sweetalert2/issues/2791)) ([5e72a29](https://github.com/sweetalert2/sweetalert2/commit/5e72a29a1395c4d58d4cc0759cb6aa530ac390dc))
+
+## [11.15.5](https://github.com/sweetalert2/sweetalert2/compare/v11.15.4...v11.15.5) (2025-01-01)
+
+
+### Bug Fixes
+
+* revert "stop using deprecated sass imports ([#2790](https://github.com/sweetalert2/sweetalert2/issues/2790))" ([dd97316](https://github.com/sweetalert2/sweetalert2/commit/dd97316de67a71b719255481d0c5c730a0eea65d))
+
+## [11.15.4](https://github.com/sweetalert2/sweetalert2/compare/v11.15.3...v11.15.4) (2025-01-01)
+
+
+### Bug Fixes
+
+* stop using deprecated sass imports ([#2790](https://github.com/sweetalert2/sweetalert2/issues/2790)) ([c5cc516](https://github.com/sweetalert2/sweetalert2/commit/c5cc5160848986f0a95a631c79e949c6d1a846f9))
+
+## [11.15.3](https://github.com/sweetalert2/sweetalert2/compare/v11.15.2...v11.15.3) (2024-12-21)
+
+
+### Bug Fixes
+
+* styles specificity for html container ([1104474](https://github.com/sweetalert2/sweetalert2/commit/11044749830e36846190ff87030dd5a58d835fb8))
+
+## [11.15.2](https://github.com/sweetalert2/sweetalert2/compare/v11.15.1...v11.15.2) (2024-12-17)
+
+
+### Bug Fixes
+
+* draggable cursor ([#2788](https://github.com/sweetalert2/sweetalert2/issues/2788)) ([b561301](https://github.com/sweetalert2/sweetalert2/commit/b561301ecc025cd4bd2fef807b1c06711246d23b))
+
+## [11.15.1](https://github.com/sweetalert2/sweetalert2/compare/v11.15.0...v11.15.1) (2024-12-16)
+
+
+### Bug Fixes
+
+* dragging cursor ([#2787](https://github.com/sweetalert2/sweetalert2/issues/2787)) ([1926b76](https://github.com/sweetalert2/sweetalert2/commit/1926b76ead2ce2e721420281ffe2229f7e34d3da))
+
+# [11.15.0](https://github.com/sweetalert2/sweetalert2/compare/v11.14.5...v11.15.0) (2024-12-14)
+
+
+### Features
+
+* add draggable param ([#2786](https://github.com/sweetalert2/sweetalert2/issues/2786)) ([eb86a66](https://github.com/sweetalert2/sweetalert2/commit/eb86a660f999f2373d5b685a8c9900050b17468e))
+
+## [11.14.5](https://github.com/sweetalert2/sweetalert2/compare/v11.14.4...v11.14.5) (2024-11-04)
+
+
+### Bug Fixes
+
+* add types to close.js ([e5956d8](https://github.com/sweetalert2/sweetalert2/commit/e5956d85ac460cdefd93e5520d7977546e48c0d7))
+
+## [11.14.4](https://github.com/sweetalert2/sweetalert2/compare/v11.14.3...v11.14.4) (2024-10-20)
+
+
+### Bug Fixes
+
+* get rid of sass/mixins ([#2774](https://github.com/sweetalert2/sweetalert2/issues/2774)) ([e79ddb0](https://github.com/sweetalert2/sweetalert2/commit/e79ddb091170498f19a408c97136d3d994ee08e3))
+
+## [11.14.3](https://github.com/sweetalert2/sweetalert2/compare/v11.14.2...v11.14.3) (2024-10-12)
+
+
+### Bug Fixes
+
+* handle `transitionend` together with `animationend` ([#2773](https://github.com/sweetalert2/sweetalert2/issues/2773)) ([3441fc5](https://github.com/sweetalert2/sweetalert2/commit/3441fc5c64f207bcd5afebdd0a266dcc5f009c13))
+
+## [11.14.2](https://github.com/sweetalert2/sweetalert2/compare/v11.14.1...v11.14.2) (2024-10-07)
+
+
+### Bug Fixes
+
+* use animationend event ([#2770](https://github.com/sweetalert2/sweetalert2/issues/2770)) ([c510323](https://github.com/sweetalert2/sweetalert2/commit/c51032360ca9cff448ca7375001f604df1061982))
+
+## [11.14.1](https://github.com/sweetalert2/sweetalert2/compare/v11.14.0...v11.14.1) (2024-09-21)
+
+
+### Bug Fixes
+
+* avoid using deprecated sass lighten function ([#2767](https://github.com/sweetalert2/sweetalert2/issues/2767)) ([eb16ab3](https://github.com/sweetalert2/sweetalert2/commit/eb16ab318f92eda4e3c8e994c4df8a44e2bd9e52))
+
+# [11.14.0](https://github.com/sweetalert2/sweetalert2/compare/v11.13.3...v11.14.0) (2024-09-09)
+
+
+### Features
+
+* add global events `.on()` `.off()` `.once()` ([#2763](https://github.com/sweetalert2/sweetalert2/issues/2763)) ([60dabc1](https://github.com/sweetalert2/sweetalert2/commit/60dabc13a790fc04c624b70bc1e6c6ca01386151))
+
+## [11.13.3](https://github.com/sweetalert2/sweetalert2/compare/v11.13.2...v11.13.3) (2024-09-07)
+
+
+### Bug Fixes
+
+* checkbox label = inputPlaceholder || inputLabel ([#2761](https://github.com/sweetalert2/sweetalert2/issues/2761)) ([e783864](https://github.com/sweetalert2/sweetalert2/commit/e78386406bad7d703b1e4db3d0c078f7bcb029aa))
+
+## [11.13.2](https://github.com/sweetalert2/sweetalert2/compare/v11.13.1...v11.13.2) (2024-09-04)
+
+
+### Bug Fixes
+
+* add transform-optional-chaining and transform-class-properties babel plugins to make webpack 4 happy ([55bdf07](https://github.com/sweetalert2/sweetalert2/commit/55bdf07152a5aa147ed00787d1079fb618bee9fc)), closes [/github.com/sweetalert2/sweetalert2/pull/2759#issuecomment-2328739992](https://github.com//github.com/sweetalert2/sweetalert2/pull/2759/issues/issuecomment-2328739992)
+* set babel browser targets to default targets ([#2759](https://github.com/sweetalert2/sweetalert2/issues/2759)) ([270baa7](https://github.com/sweetalert2/sweetalert2/commit/270baa7b0b02cb70b34bf7d4ca343e290aa2fd8f))
+
+## [11.13.1](https://github.com/sweetalert2/sweetalert2/compare/v11.13.0...v11.13.1) (2024-09-03)
+
+
+### Bug Fixes
+
+* esm module export ([29082b5](https://github.com/sweetalert2/sweetalert2/commit/29082b54353abbb16a1161a2de2211587f6428a6))
+
+# [11.13.0](https://github.com/sweetalert2/sweetalert2/compare/v11.12.4...v11.13.0) (2024-09-03)
+
+
+### Features
+
+* publish .esm.js ([#2757](https://github.com/sweetalert2/sweetalert2/issues/2757)) ([e6537e5](https://github.com/sweetalert2/sweetalert2/commit/e6537e5ed6a6309a2947f877002db60e47fc6978))
+
+## [11.12.4](https://github.com/sweetalert2/sweetalert2/compare/v11.12.3...v11.12.4) (2024-08-01)
+
+
+### Bug Fixes
+
+* upgrade to eslint 9 ([#2748](https://github.com/sweetalert2/sweetalert2/issues/2748)) ([6696b81](https://github.com/sweetalert2/sweetalert2/commit/6696b81f40584268c66025b0a57d444c087d5287))
+
+## [11.12.3](https://github.com/sweetalert2/sweetalert2/compare/v11.12.2...v11.12.3) (2024-07-19)
+
+
+### Bug Fixes
+
+* strict types renderInput.js and getTemplateParams.js ([df6d0ed](https://github.com/sweetalert2/sweetalert2/commit/df6d0ed1ca1b6cbc947e5ef7cdb3bfdddf50ab67))
+
+## [11.12.2](https://github.com/sweetalert2/sweetalert2/compare/v11.12.1...v11.12.2) (2024-07-05)
+
+
+### Bug Fixes
+
+* `customClass` for buttons ([#2741](https://github.com/sweetalert2/sweetalert2/issues/2741)) ([87201a0](https://github.com/sweetalert2/sweetalert2/commit/87201a06c351ed467280892828c731caf02477b1))
+
+## [11.12.1](https://github.com/sweetalert2/sweetalert2/compare/v11.12.0...v11.12.1) (2024-06-28)
+
+
+### Bug Fixes
+
+* strict types domUtils.js ([42720b4](https://github.com/sweetalert2/sweetalert2/commit/42720b4369d00370fa2f3934520f1b013bb6f090))
+
+# [11.12.0](https://github.com/sweetalert2/sweetalert2/compare/v11.11.1...v11.12.0) (2024-06-18)
+
+
+### Bug Fixes
+
+* **styles:** :focus -> :focus-visible for buttons ([#2733](https://github.com/sweetalert2/sweetalert2/issues/2733)) ([9be8249](https://github.com/sweetalert2/sweetalert2/commit/9be8249e518d0bc82d5171f5671c17c43288b25c))
+
+
+### Features
+
+* focus `[autofocus]` element in a popup ([#2736](https://github.com/sweetalert2/sweetalert2/issues/2736)) ([52fedf3](https://github.com/sweetalert2/sweetalert2/commit/52fedf32e7c393e2ac30fbd29a269a49e1f1c07c))
+
+## [11.11.1](https://github.com/sweetalert2/sweetalert2/compare/v11.11.0...v11.11.1) (2024-06-05)
+
+
+### Bug Fixes
+
+* **types:** getSwalImage() ([e0e5e4c](https://github.com/sweetalert2/sweetalert2/commit/e0e5e4c4d806d2fe36b258926cf8f0f9a6177fd8))
+
+# [11.11.0](https://github.com/sweetalert2/sweetalert2/compare/v11.10.8...v11.11.0) (2024-05-11)
+
+
+### Features
+
+* **types:** allow `undefined` as options ([#2728](https://github.com/sweetalert2/sweetalert2/issues/2728)) ([0d6f0ec](https://github.com/sweetalert2/sweetalert2/commit/0d6f0ecb253d7e4422e987a185648bee977310e1))
+
+## [11.10.8](https://github.com/sweetalert2/sweetalert2/compare/v11.10.7...v11.10.8) (2024-04-17)
+
+
+### Bug Fixes
+
+* prevent popup content from being selected on double click on the container ([#2722](https://github.com/sweetalert2/sweetalert2/issues/2722)) ([7910325](https://github.com/sweetalert2/sweetalert2/commit/79103251ddbc664171cc6538320d57ca72a36a89))
+
+## [11.10.7](https://github.com/sweetalert2/sweetalert2/compare/v11.10.6...v11.10.7) (2024-03-22)
+
+
+### Bug Fixes
+
+* improve performance by pulling querySelector out of the loop ([#2719](https://github.com/sweetalert2/sweetalert2/issues/2719)) ([9f94517](https://github.com/sweetalert2/sweetalert2/commit/9f9451789d1efab3f0dc5a7f841af0f17619b2f4))
+
+## [11.10.6](https://github.com/sweetalert2/sweetalert2/compare/v11.10.5...v11.10.6) (2024-03-05)
+
+
+### Bug Fixes
+
+* allow single quotes in default email validator ([#2717](https://github.com/sweetalert2/sweetalert2/issues/2717)) ([e4b7a3a](https://github.com/sweetalert2/sweetalert2/commit/e4b7a3a9a19a5e9009dbe594022ab338ad5bb21c))
+
+## [11.10.5](https://github.com/sweetalert2/sweetalert2/compare/v11.10.4...v11.10.5) (2024-02-05)
+
+
+### Bug Fixes
+
+* show the browser validation message for input ([#2704](https://github.com/sweetalert2/sweetalert2/issues/2704)) ([68d6d35](https://github.com/sweetalert2/sweetalert2/commit/68d6d35b3a285fe50ee0857966885fdc1368f0f8))
+
 ## [11.10.4](https://github.com/sweetalert2/sweetalert2/compare/v11.10.3...v11.10.4) (2024-01-23)
 
 
