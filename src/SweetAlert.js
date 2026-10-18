@@ -17,18 +17,26 @@ import defaultParams, { showWarningsForParams } from './utils/params.js'
 import setParameters from './utils/setParameters.js'
 import { callIfFunction, warnAboutDeprecation } from './utils/utils.js'
 
-/** @type {SweetAlert} */
+/**
+ * Inside this file the `SweetAlert` identifier refers to the class below, shadowing the global
+ * `SweetAlert` typedef which also includes the prototype-assigned instance methods.
+ *
+ * @typedef {SweetAlert & SweetAlertInstanceMethods} SweetAlertInstance
+ */
+
+/** @type {SweetAlertInstance} */
 let currentInstance
 
 export class SweetAlert {
   /**
    * @type {Promise<SweetAlertResult>}
    */
-  #promise
+  #promise = /** @type {Promise<SweetAlertResult>} */ (
+    Promise.resolve({ isConfirmed: false, isDenied: false, isDismissed: true })
+  )
 
   /**
-   * @param {...any} args
-   * @this {SweetAlert}
+   * @param {...(SweetAlertOptions | string)} args
    */
   constructor(...args) {
     // Prevent run in Node env
@@ -36,7 +44,7 @@ export class SweetAlert {
       return
     }
 
-    currentInstance = this
+    currentInstance = /** @type {SweetAlertInstance} */ (/** @type {unknown} */ (this))
 
     // @ts-ignore
     const outerParams = Object.freeze(this.constructor.argsToParams(args))
@@ -50,6 +58,10 @@ export class SweetAlert {
     this.#promise = this._main(currentInstance.params)
   }
 
+  /**
+   * @param {any} userParams
+   * @param {any} mixinParams
+   */
   _main(userParams, mixinParams = {}) {
     showWarningsForParams(Object.assign({}, mixinParams, userParams))
 
@@ -90,20 +102,27 @@ export class SweetAlert {
   }
 
   // `catch` cannot be the name of a module export, so we define our thenable methods here instead
+  /**
+   * @param {any} onFulfilled
+   */
+  // oxlint-disable-next-line unicorn/no-thenable
   then(onFulfilled) {
     return this.#promise.then(onFulfilled)
   }
 
+  /**
+   * @param {any} onFinally
+   */
   finally(onFinally) {
     return this.#promise.finally(onFinally)
   }
 }
 
 /**
- * @param {SweetAlert} instance
+ * @param {SweetAlertInstance} instance
  * @param {DomCache} domCache
  * @param {SweetAlertOptions} innerParams
- * @returns {Promise}
+ * @returns {Promise<SweetAlertResult>}
  */
 const swalPromise = (instance, domCache, innerParams) => {
   return new Promise((resolve, reject) => {
@@ -112,7 +131,7 @@ const swalPromise = (instance, domCache, innerParams) => {
      * @param {DismissReason} dismiss
      */
     const dismissWith = (dismiss) => {
-      instance.close({ isDismissed: true, dismiss })
+      instance.close({ isDismissed: true, dismiss, isConfirmed: false, isDenied: false })
     }
 
     privateMethods.swalPromiseResolve.set(instance, resolve)
@@ -177,18 +196,18 @@ const prepareParams = (userParams, mixinParams) => {
  * @returns {DomCache}
  */
 const populateDomCache = (instance) => {
-  const domCache = {
-    popup: dom.getPopup(),
-    container: dom.getContainer(),
-    actions: dom.getActions(),
-    confirmButton: dom.getConfirmButton(),
-    denyButton: dom.getDenyButton(),
-    cancelButton: dom.getCancelButton(),
-    loader: dom.getLoader(),
-    closeButton: dom.getCloseButton(),
-    validationMessage: dom.getValidationMessage(),
-    progressSteps: dom.getProgressSteps(),
-  }
+  const domCache = /** @type {DomCache} */ ({
+    popup: /** @type {HTMLElement} */ (dom.getPopup()),
+    container: /** @type {HTMLElement} */ (dom.getContainer()),
+    actions: /** @type {HTMLElement} */ (dom.getActions()),
+    confirmButton: /** @type {HTMLElement} */ (dom.getConfirmButton()),
+    denyButton: /** @type {HTMLElement} */ (dom.getDenyButton()),
+    cancelButton: /** @type {HTMLElement} */ (dom.getCancelButton()),
+    loader: /** @type {HTMLElement} */ (dom.getLoader()),
+    closeButton: /** @type {HTMLElement} */ (dom.getCloseButton()),
+    validationMessage: /** @type {HTMLElement} */ (dom.getValidationMessage()),
+    progressSteps: /** @type {HTMLElement} */ (dom.getProgressSteps()),
+  })
   privateProps.domCache.set(instance, domCache)
 
   return domCache
@@ -197,7 +216,7 @@ const populateDomCache = (instance) => {
 /**
  * @param {GlobalState} globalState
  * @param {SweetAlertOptions} innerParams
- * @param {Function} dismissWith
+ * @param {(dismiss: DismissReason) => void} dismissWith
  */
 const setupTimer = (globalState, innerParams, dismissWith) => {
   const timerProgressBar = dom.getTimerProgressBar()
@@ -207,13 +226,13 @@ const setupTimer = (globalState, innerParams, dismissWith) => {
       dismissWith('timer')
       delete globalState.timeout
     }, innerParams.timer)
-    if (innerParams.timerProgressBar) {
+    if (innerParams.timerProgressBar && timerProgressBar) {
       dom.show(timerProgressBar)
       dom.applyCustomClass(timerProgressBar, innerParams, 'timerProgressBar')
       setTimeout(() => {
         if (globalState.timeout && globalState.timeout.running) {
           // timer can be already stopped or unset at this point
-          dom.animateTimerProgressBar(innerParams.timer)
+          dom.animateTimerProgressBar(/** @type {number} */ (innerParams.timer))
         }
       })
     }
@@ -239,8 +258,8 @@ const initFocus = (domCache, innerParams) => {
   }
   // TODO: this is dumb, remove `allowEnterKey` param in the next major version
   if (!callIfFunction(innerParams.allowEnterKey)) {
-    warnAboutDeprecation('allowEnterKey')
-    blurActiveElement()
+    warnAboutDeprecation('allowEnterKey', 'preConfirm: () => false')
+    domCache.popup.focus()
     return
   }
 
@@ -294,55 +313,26 @@ const focusButton = (domCache, innerParams) => {
   return false
 }
 
-const blurActiveElement = () => {
-  if (document.activeElement instanceof HTMLElement && typeof document.activeElement.blur === 'function') {
-    document.activeElement.blur()
-  }
-}
-
-// Dear russian users visiting russian sites. Let's have fun.
-if (
-  typeof window !== 'undefined' &&
-  /^ru\b/.test(navigator.language) &&
-  location.host.match(/\.(ru|su|by|xn--p1ai)$/)
-) {
-  const now = new Date()
-  const initiationDate = localStorage.getItem('swal-initiation')
-  if (!initiationDate) {
-    localStorage.setItem('swal-initiation', `${now}`)
-  } else if ((now.getTime() - Date.parse(initiationDate)) / (1000 * 60 * 60 * 24) > 3) {
-    setTimeout(() => {
-      document.body.style.pointerEvents = 'none'
-      const ukrainianAnthem = document.createElement('audio')
-      ukrainianAnthem.src = 'https://flag-gimn.ru/wp-content/uploads/2021/09/Ukraina.mp3'
-      ukrainianAnthem.loop = true
-      document.body.appendChild(ukrainianAnthem)
-      setTimeout(() => {
-        ukrainianAnthem.play().catch(() => {
-          // ignore
-        })
-      }, 2500)
-    }, 500)
-  }
-}
-
 // Assign instance methods from src/instanceMethods/*.js to prototype
-SweetAlert.prototype.disableButtons = instanceMethods.disableButtons
-SweetAlert.prototype.enableButtons = instanceMethods.enableButtons
-SweetAlert.prototype.getInput = instanceMethods.getInput
-SweetAlert.prototype.disableInput = instanceMethods.disableInput
-SweetAlert.prototype.enableInput = instanceMethods.enableInput
-SweetAlert.prototype.hideLoading = instanceMethods.hideLoading
-SweetAlert.prototype.disableLoading = instanceMethods.disableLoading
-SweetAlert.prototype.showValidationMessage = instanceMethods.showValidationMessage
-SweetAlert.prototype.resetValidationMessage = instanceMethods.resetValidationMessage
-SweetAlert.prototype.close = instanceMethods.close
-SweetAlert.prototype.closePopup = instanceMethods.closePopup
-SweetAlert.prototype.closeModal = instanceMethods.closeModal
-SweetAlert.prototype.closeToast = instanceMethods.closeToast
-SweetAlert.prototype.rejectPromise = instanceMethods.rejectPromise
-SweetAlert.prototype.update = instanceMethods.update
-SweetAlert.prototype._destroy = instanceMethods._destroy
+// (their types are declared in the `SweetAlertInstanceMethods` typedef in src/types.js)
+Object.assign(SweetAlert.prototype, {
+  disableButtons: instanceMethods.disableButtons,
+  enableButtons: instanceMethods.enableButtons,
+  getInput: instanceMethods.getInput,
+  disableInput: instanceMethods.disableInput,
+  enableInput: instanceMethods.enableInput,
+  hideLoading: instanceMethods.hideLoading,
+  disableLoading: instanceMethods.disableLoading,
+  showValidationMessage: instanceMethods.showValidationMessage,
+  resetValidationMessage: instanceMethods.resetValidationMessage,
+  close: instanceMethods.close,
+  closePopup: instanceMethods.closePopup,
+  closeModal: instanceMethods.closeModal,
+  closeToast: instanceMethods.closeToast,
+  rejectPromise: instanceMethods.rejectPromise,
+  update: instanceMethods.update,
+  _destroy: instanceMethods._destroy,
+})
 
 // Assign static methods from src/staticMethods/*.js to constructor
 Object.assign(SweetAlert, staticMethods)
@@ -350,19 +340,22 @@ Object.assign(SweetAlert, staticMethods)
 // Proxy to instance methods to constructor, for now, for backwards compatibility
 Object.keys(instanceMethods).forEach((key) => {
   /**
-   * @param {...any} args
-   * @returns {any | undefined}
+   * @param {...(SweetAlertOptions | string | undefined)} args
+   * @returns {SweetAlertResult | Promise<SweetAlertResult> | undefined}
    */
+  // @ts-ignore: Dynamic property assignment for backwards compatibility
   SweetAlert[key] = function (...args) {
+    // @ts-ignore
     if (currentInstance && currentInstance[key]) {
+      // @ts-ignore
       return currentInstance[key](...args)
     }
-    return null
+    return undefined
   }
 })
 
 SweetAlert.DismissReason = DismissReason
 
-SweetAlert.version = '11.22.0'
+SweetAlert.version = '11.26.25'
 
 export default SweetAlert

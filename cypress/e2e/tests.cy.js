@@ -82,7 +82,7 @@ describe('Accessibility', () => {
     expect(divAriaHiddenFalse.getAttribute('aria-hidden')).to.equal('true')
 
     Swal.close()
-    expect(div.hasAttribute('aria-hidden')).to.be.false
+    expect(div.hasAttribute('aria-hidden')).to.equal(false)
     expect(divAriaHiddenFalse.getAttribute('aria-hidden')).to.equal('false')
   })
 
@@ -93,7 +93,7 @@ describe('Accessibility', () => {
     SwalWithoutAnimation.fire({
       target: div,
     })
-    expect(div.hasAttribute('aria-hidden')).to.be.false
+    expect(div.hasAttribute('aria-hidden')).to.equal(false)
   })
 
   it('should not set aria-hidden="true" when `backdrop: false`', () => {
@@ -103,7 +103,7 @@ describe('Accessibility', () => {
     SwalWithoutAnimation.fire({
       backdrop: false,
     })
-    expect(div.hasAttribute('aria-hidden')).to.be.false
+    expect(div.hasAttribute('aria-hidden')).to.equal(false)
   })
 
   it('should not set aria-hidden="true" when `toast: true`', (done) => {
@@ -119,7 +119,7 @@ describe('Accessibility', () => {
         done()
       },
     })
-    expect(div.hasAttribute('aria-hidden')).to.be.false
+    expect(div.hasAttribute('aria-hidden')).to.equal(false)
     Swal.close()
   })
 
@@ -131,7 +131,7 @@ describe('Accessibility', () => {
       didClose: () => {
         Swal.fire({
           didClose: () => {
-            expect(div.hasAttribute('aria-hidden')).to.be.true
+            expect(div.hasAttribute('aria-hidden')).to.equal(true)
             done()
           },
         })
@@ -147,7 +147,7 @@ describe('Accessibility', () => {
     SwalWithoutAnimation.fire()
     SwalWithoutAnimation.fire()
     SwalWithoutAnimation.close()
-    expect(div.hasAttribute('aria-hidden')).to.be.false
+    expect(div.hasAttribute('aria-hidden')).to.equal(false)
   })
 
   it('should set modal ARIA attributes', () => {
@@ -161,7 +161,7 @@ describe('Accessibility', () => {
     Swal.fire({ title: 'Toast', toast: true })
     expect(Swal.getPopup().getAttribute('role')).to.equal('alert')
     expect(Swal.getPopup().getAttribute('aria-live')).to.equal('polite')
-    expect(Swal.getPopup().getAttribute('aria-modal')).to.be.null
+    expect(Swal.getPopup().getAttribute('aria-modal')).to.equal(null)
   })
 })
 
@@ -326,7 +326,7 @@ describe('allowOutsideClick', () => {
     })
     Swal.getContainer().click()
     setTimeout(() => {
-      expect(Swal.isVisible()).to.be.true
+      expect(Swal.isVisible()).to.equal(true)
       done()
     })
   })
@@ -347,7 +347,7 @@ describe('allowOutsideClick', () => {
     Swal.showLoading()
     Swal.getContainer().click()
     setTimeout(() => {
-      expect(Swal.isVisible()).to.be.true
+      expect(Swal.isVisible()).to.equal(true)
       Swal.hideLoading()
       Swal.getContainer().click()
     }, TIMEOUT)
@@ -362,7 +362,7 @@ describe('allowOutsideClick', () => {
     })
     expect(
       spy.calledWith('SweetAlert2: "allowOutsideClick" parameter requires `backdrop` parameter to be set to `true`')
-    ).to.be.true
+    ).to.equal(true)
   })
 
   it('should not throw console warning for { allowOutsideClick: true }', () => {
@@ -370,7 +370,7 @@ describe('allowOutsideClick', () => {
     SwalWithoutAnimation.fire({
       allowOutsideClick: true,
     })
-    expect(spy.notCalled).to.be.true
+    expect(spy.notCalled).to.equal(true)
   })
 
   it('should not throw console warning for { backdrop: false }', () => {
@@ -378,14 +378,14 @@ describe('allowOutsideClick', () => {
     SwalWithoutAnimation.fire({
       backdrop: false,
     })
-    expect(spy.notCalled).to.be.true
+    expect(spy.notCalled).to.equal(true)
   })
 })
 
 describe('customClass', () => {
   it('customClass as a string', () => {
     Swal.fire({ customClass: 'custom-class' })
-    expect(Swal.getPopup().classList.contains('custom-class')).to.be.true
+    expect(Swal.getPopup().classList.contains('custom-class')).to.equal(true)
   })
 
   it('customClass as an object', () => {
@@ -413,21 +413,21 @@ describe('customClass', () => {
         timerProgressBar: 'timer-progress-bar-class',
       },
     })
-    expect(Swal.getContainer().classList.contains('container-class')).to.be.true
-    expect(Swal.getPopup().classList.contains('popup-class')).to.be.true
-    expect(Swal.getTitle().classList.contains('title-class')).to.be.true
-    expect(Swal.getCloseButton().classList.contains('close-button-class')).to.be.true
-    expect(Swal.getIcon().classList.contains('icon-class')).to.be.true
-    expect(Swal.getImage().classList.contains('image-class')).to.be.true
-    expect(Swal.getHtmlContainer().classList.contains('html-container-class')).to.be.true
-    expect(Swal.getInput().classList.contains('input-class')).to.be.true
-    expect(Swal.getActions().classList.contains('actions-class')).to.be.true
-    expect(Swal.getConfirmButton().classList.contains('confirm-button-class')).to.be.true
-    expect(Swal.getDenyButton().classList.contains('deny-button-class')).to.be.true
-    expect(Swal.getCancelButton().classList.contains('cancel-button-class')).to.be.true
-    expect(Swal.getLoader().classList.contains('loader-class')).to.be.true
-    expect(Swal.getFooter().classList.contains('footer-class')).to.be.true
-    expect(Swal.getTimerProgressBar().classList.contains('timer-progress-bar-class')).to.be.true
+    expect(Swal.getContainer().classList.contains('container-class')).to.equal(true)
+    expect(Swal.getPopup().classList.contains('popup-class')).to.equal(true)
+    expect(Swal.getTitle().classList.contains('title-class')).to.equal(true)
+    expect(Swal.getCloseButton().classList.contains('close-button-class')).to.equal(true)
+    expect(Swal.getIcon().classList.contains('icon-class')).to.equal(true)
+    expect(Swal.getImage().classList.contains('image-class')).to.equal(true)
+    expect(Swal.getHtmlContainer().classList.contains('html-container-class')).to.equal(true)
+    expect(Swal.getInput().classList.contains('input-class')).to.equal(true)
+    expect(Swal.getActions().classList.contains('actions-class')).to.equal(true)
+    expect(Swal.getConfirmButton().classList.contains('confirm-button-class')).to.equal(true)
+    expect(Swal.getDenyButton().classList.contains('deny-button-class')).to.equal(true)
+    expect(Swal.getCancelButton().classList.contains('cancel-button-class')).to.equal(true)
+    expect(Swal.getLoader().classList.contains('loader-class')).to.equal(true)
+    expect(Swal.getFooter().classList.contains('footer-class')).to.equal(true)
+    expect(Swal.getTimerProgressBar().classList.contains('timer-progress-bar-class')).to.equal(true)
   })
 
   it('only visible input has custom class', () => {
@@ -437,8 +437,8 @@ describe('customClass', () => {
         input: 'input-class',
       },
     })
-    expect($('.swal2-checkbox').classList.contains('input-class')).to.be.true
-    expect(Swal.getInput().classList.contains('input-class')).to.be.false
+    expect($('.swal2-checkbox').classList.contains('input-class')).to.equal(true)
+    expect(Swal.getInput().classList.contains('input-class')).to.equal(false)
   })
 
   it('customClass as an object with the only one key', () => {
@@ -448,7 +448,7 @@ describe('customClass', () => {
         title: 'title-class',
       },
     })
-    expect(Swal.getTitle().classList.contains('title-class')).to.be.true
+    expect(Swal.getTitle().classList.contains('title-class')).to.equal(true)
   })
 
   it('should throw console warning about unexpected type of customClass', () => {
@@ -461,15 +461,15 @@ describe('customClass', () => {
     })
     expect(
       spy.calledWith('SweetAlert2: Invalid type of customClass.title! Expected string or iterable object, got "object"')
-    ).to.be.true
+    ).to.equal(true)
     expect(
       spy.calledWith('SweetAlert2: Invalid type of customClass.popup! Expected string or iterable object, got "number"')
-    ).to.be.true
+    ).to.equal(true)
   })
 })
 
 describe('draggable', () => {
-  it('should drag popup with mouse evnets', () => {
+  it('should drag popup with mouse events', () => {
     SwalWithoutAnimation.fire({
       title: 'Drag me!',
       draggable: true,
@@ -595,7 +595,7 @@ describe('icon', () => {
   it('The popup should have the icon class', () => {
     for (const icon in iconTypes) {
       SwalWithoutAnimation.fire({ icon })
-      expect(Swal.getPopup().classList.contains(swalClasses[`icon-${icon}`])).to.be.true
+      expect(Swal.getPopup().classList.contains(swalClasses[`icon-${icon}`])).to.equal(true)
     }
   })
 
@@ -608,14 +608,14 @@ describe('icon', () => {
       spy.calledWith(
         'SweetAlert2: Unknown icon! Expected "success", "error", "warning", "info" or "question", got "invalid-icon"'
       )
-    ).to.be.true
+    ).to.equal(true)
 
     // should behave the same way as empty object would be passed
-    expect(isVisible(Swal.getConfirmButton())).to.be.true
-    expect(isHidden(Swal.getCancelButton())).to.be.true
+    expect(isVisible(Swal.getConfirmButton())).to.equal(true)
+    expect(isHidden(Swal.getCancelButton())).to.equal(true)
     expect(Swal.getTitle().textContent).to.equal('')
     expect(Swal.getHtmlContainer().textContent).to.equal('')
-    expect(isHidden(Swal.getFooter())).to.be.true
+    expect(isHidden(Swal.getFooter())).to.equal(true)
   })
 
   it('Success icon with custom HTML (iconHtml)', () => {
@@ -826,7 +826,7 @@ describe('position', () => {
       expect(
         checkPosition.check(position, swalRect),
         `modal position: ${position} \n Swal: (${swalRect.top}, ${swalRect.right}, ${swalRect.bottom}, ${swalRect.left})x(${swalRect.height}, ${swalRect.width})\n Window: (${window.innerHeight} ${window.innerWidth})`
-      ).to.be.true
+      ).to.equal(true)
       Swal.close()
     })
   })
@@ -842,7 +842,7 @@ describe('position', () => {
       expect(
         checkPosition.check(position, swalRect),
         `toast position:: ${position} \n Swal: (${swalRect.top}, ${swalRect.right}, ${swalRect.bottom}, ${swalRect.left})x(${swalRect.height}, ${swalRect.width})\n Window: (${window.innerHeight} ${window.innerWidth})`
-      ).to.be.true
+      ).to.equal(true)
       Swal.close()
     })
   })
@@ -875,7 +875,7 @@ describe('position', () => {
       expect(
         checkPosition.check(position, swalRect),
         `modal position with target: ${position} \n Swal: (${swalRect.top}, ${swalRect.right}, ${swalRect.bottom}, ${swalRect.left})x(${swalRect.height}, ${swalRect.width})`
-      ).to.be.true
+      ).to.equal(true)
       Swal.close()
     })
 
@@ -909,7 +909,7 @@ describe('position', () => {
       expect(
         checkPosition.check(position, swalRect),
         `toast position with target: ${position}\n Swal: (${swalRect.top}, ${swalRect.right}, ${swalRect.bottom}, ${swalRect.left})x(${swalRect.height}, ${swalRect.width})`
-      ).to.be.true
+      ).to.equal(true)
       Swal.close()
     })
 
@@ -923,7 +923,56 @@ describe('preConfirm', () => {
       preConfirm: () => false,
     })
     Swal.clickConfirm()
-    expect(Swal.isVisible()).to.be.true
+    expect(Swal.isVisible()).to.equal(true)
+  })
+
+  it('preConfirm return false should keep focus where it was', (done) => {
+    SwalWithoutAnimation.fire({
+      preConfirm: () => false,
+    })
+    Swal.clickConfirm()
+    setTimeout(() => {
+      expect(Swal.isVisible()).to.equal(true)
+      expect(document.activeElement).to.equal(Swal.getConfirmButton())
+      done()
+    }, TIMEOUT)
+  })
+
+  it('preConfirm return false with input should keep focus on the input', (done) => {
+    SwalWithoutAnimation.fire({
+      input: 'text',
+      preConfirm: () => false,
+    })
+    Swal.getInput().focus()
+    Swal.clickConfirm()
+    setTimeout(() => {
+      expect(Swal.isVisible()).to.equal(true)
+      expect(document.activeElement).to.equal(Swal.getInput())
+      done()
+    }, TIMEOUT)
+  })
+
+  it('preConfirm should preserve focus set inside preConfirm (e.g. reportValidity)', (done) => {
+    const form = document.createElement('form')
+    const input = document.createElement('input')
+    input.type = 'text'
+    input.required = true
+    form.appendChild(input)
+
+    SwalWithoutAnimation.fire({
+      html: form,
+      preConfirm: () => {
+        if (!form.reportValidity()) {
+          return false
+        }
+      },
+    })
+    Swal.clickConfirm()
+    setTimeout(() => {
+      expect(Swal.isVisible()).to.equal(true)
+      expect(document.activeElement).to.equal(input)
+      done()
+    }, TIMEOUT)
   })
 
   it('preConfirm custom value', (done) => {
@@ -975,7 +1024,7 @@ describe('preConfirm', () => {
         done()
       })
     Swal.clickConfirm()
-    expect(Swal.isVisible()).to.be.true
+    expect(Swal.isVisible()).to.equal(true)
   })
 
   it('preConfirm promise is rejected with a swal chain inside preConfirm', (done) => {
@@ -1004,7 +1053,7 @@ describe('preConfirm', () => {
         done()
       })
     Swal.clickConfirm()
-    expect(Swal.isVisible()).to.be.true
+    expect(Swal.isVisible()).to.equal(true)
   })
 
   it('should complete the promise when calling showValidationMessage() inside preConfirm', (done) => {
@@ -1028,12 +1077,26 @@ describe('preDeny', () => {
     SwalWithoutAnimation.fire({
       showDenyButton: true,
       preDeny: (value) => {
-        expect(value).to.be.false
+        expect(value).to.equal(false)
         return false
       },
     })
     Swal.clickDeny()
-    expect(Swal.isVisible()).to.be.true
+    expect(Swal.isVisible()).to.equal(true)
+  })
+
+  it('preDeny return false should keep focus where it was', (done) => {
+    SwalWithoutAnimation.fire({
+      showDenyButton: true,
+      preDeny: () => false,
+    })
+    Swal.getDenyButton().focus()
+    Swal.clickDeny()
+    setTimeout(() => {
+      expect(Swal.isVisible()).to.equal(true)
+      expect(document.activeElement).to.equal(Swal.getDenyButton())
+      done()
+    }, TIMEOUT)
   })
 
   it('preDeny custom value', (done) => {
@@ -1091,7 +1154,7 @@ describe('preDeny', () => {
         done()
       })
     Swal.clickDeny()
-    expect(Swal.isVisible()).to.be.true
+    expect(Swal.isVisible()).to.equal(true)
   })
 
   it('preDeny promise is rejected with a swal chain inside preDeny', (done) => {
@@ -1120,7 +1183,7 @@ describe('preDeny', () => {
         done()
       })
     Swal.clickDeny()
-    expect(Swal.isVisible()).to.be.true
+    expect(Swal.isVisible()).to.equal(true)
   })
 })
 
@@ -1132,7 +1195,7 @@ describe('progressSteps', () => {
       didOpen: () => {
         expect(
           Swal.getProgressSteps().querySelector('.swal2-progress-step').classList.contains('swal2-active-progress-step')
-        ).to.be.true
+        ).to.equal(true)
         done()
       },
     })
@@ -1150,7 +1213,7 @@ describe('showClass + hideClass', () => {
         popup: 'animated fadeOutUp faster',
       },
       didClose: () => {
-        expect(Swal.isVisible()).to.be.false
+        expect(Swal.isVisible()).to.equal(false)
         done()
       },
     })
@@ -1160,10 +1223,12 @@ describe('showClass + hideClass', () => {
 
 describe('stopKeydownPropagation', () => {
   it('stopKeydownPropagation', (done) => {
-    document.body.addEventListener('keydown', (e) => {
+    const handler = (e) => {
       expect(e.key).to.equal('Escape')
+      document.body.removeEventListener('keydown', handler)
       done()
-    })
+    }
+    document.body.addEventListener('keydown', handler)
 
     SwalWithoutAnimation.fire({
       title: 'Esc me and I will propagate keydown',
@@ -1229,32 +1294,32 @@ describe('template', () => {
     SwalWithoutAnimation.fire({
       template: document.querySelector('#my-template'),
     })
-    expect(Swal.getPopup().classList.contains('my-popup')).to.be.true
+    expect(Swal.getPopup().classList.contains('my-popup')).to.equal(true)
     expect(Swal.getTitle().textContent).to.equal('Are you sure?')
     expect(Swal.getImage().src).to.equal('https://sweetalert2.github.io/images/SweetAlert2.png')
     expect(Swal.getImage().style.width).to.equal('300px')
     expect(Swal.getImage().style.height).to.equal('60px')
-    expect(Swal.getInput().classList.contains('swal2-select')).to.be.true
+    expect(Swal.getInput().classList.contains('swal2-select')).to.equal(true)
     expect($('.swal2-input-label').innerHTML).to.equal('input label')
     expect(Swal.getInput().getAttribute('hey')).to.equal('there')
     expect(Swal.getInput().querySelectorAll('option').length).to.equal(3)
     expect($('.swal2-select option:nth-child(1)').innerHTML).to.equal('placeholderrr')
-    expect($('.swal2-select option:nth-child(1)').disabled).to.be.true
+    expect($('.swal2-select option:nth-child(1)').disabled).to.equal(true)
     expect($('.swal2-select option:nth-child(2)').innerHTML).to.equal('aa')
     expect($('.swal2-select option:nth-child(2)').value).to.equal('a')
     expect($('.swal2-select option:nth-child(3)').innerHTML).to.equal('bb')
     expect($('.swal2-select option:nth-child(3)').value).to.equal('b')
-    expect($('.swal2-select option:nth-child(3)').selected).to.be.true
-    expect(isHidden(Swal.getConfirmButton())).to.be.true
-    expect(isVisible(Swal.getCancelButton())).to.be.true
+    expect($('.swal2-select option:nth-child(3)').selected).to.equal(true)
+    expect(isHidden(Swal.getConfirmButton())).to.equal(true)
+    expect(isVisible(Swal.getCancelButton())).to.equal(true)
     expect(window.getComputedStyle(Swal.getDenyButton()).backgroundColor).to.equal('rgb(255, 0, 0)')
     expect(Swal.getPopup().style.width).to.equal('200px')
-    expect(isVisible(Swal.getDenyButton())).to.be.true
+    expect(isVisible(Swal.getDenyButton())).to.equal(true)
     expect(Swal.getCancelButton().nextSibling).to.equal(Swal.getDenyButton())
     expect(Swal.getCancelButton().getAttribute('aria-label')).to.equal('no no')
-    expect(isVisible(Swal.getCloseButton())).to.be.true
+    expect(isVisible(Swal.getCloseButton())).to.equal(true)
     expect(Swal.getCloseButton().innerHTML).to.equal('-')
-    expect(isVisible(Swal.getFooter())).to.be.true
+    expect(isVisible(Swal.getFooter())).to.equal(true)
     expect(Swal.getFooter().innerHTML).to.equal('footerrr')
   })
 
@@ -1273,12 +1338,12 @@ describe('template', () => {
   })
 
   it('swal-function-param', (done) => {
-    const _consoleLog = console.log // eslint-disable-line no-console
+    const _consoleLog = console.log
     const spy = cy.spy(console, 'log')
     const template = document.createElement('template')
     template.id = 'my-template-function-param'
     const didOpen = (modal) => {
-      console.log(modal.querySelector('.swal2-title').innerText) // eslint-disable-line no-console
+      console.log(modal.querySelector('.swal2-title').innerText)
     }
     template.innerHTML = `
       <swal-title>Function param</swal-title>
@@ -1289,8 +1354,8 @@ describe('template', () => {
       template: '#my-template-function-param',
     })
     setTimeout(() => {
-      expect(spy.calledWith('Function param')).to.be.true
-      console.log = _consoleLog // eslint-disable-line no-console
+      expect(spy.calledWith('Function param')).to.equal(true)
+      console.log = _consoleLog
       done()
     })
   })
@@ -1320,28 +1385,28 @@ describe('template', () => {
     expect(Swal.getImage().getAttribute('alt')).to.equal('')
     expect(Swal.getInput().type).to.equal('text')
     expect(spy.callCount).to.equal(4)
-    expect(spy.getCall(0).calledWith(`SweetAlert2: Unrecognized element <swal-foo>`)).to.be.true
+    expect(spy.getCall(0).calledWith(`SweetAlert2: Unrecognized element <swal-foo>`)).to.equal(true)
     expect(
       spy
         .getCall(1)
         .calledWith(
           `SweetAlert2: Unrecognized attribute "foo" on <swal-image>. Allowed attributes are: src, width, height, alt`
         )
-    ).to.be.true
+    ).to.equal(true)
     expect(
       spy
         .getCall(2)
         .calledWith(
           `SweetAlert2: Unrecognized attribute "bar" on <swal-input>. Allowed attributes are: type, label, placeholder, value`
         )
-    ).to.be.true
+    ).to.equal(true)
     expect(
       spy
         .getCall(3)
         .calledWith(
           `SweetAlert2: Unrecognized attribute "value" on <swal-title>. To set the value, use HTML within the element.`
         )
-    ).to.be.true
+    ).to.equal(true)
   })
 })
 
@@ -1353,7 +1418,7 @@ describe('validationMessage', () => {
     })
     Swal.clickConfirm()
     setTimeout(() => {
-      expect(isVisible(Swal.getValidationMessage())).to.be.true
+      expect(isVisible(Swal.getValidationMessage())).to.equal(true)
       expect(Swal.getValidationMessage().textContent).to.equal('custom email validation message')
       done()
     }, TIMEOUT)
@@ -1366,7 +1431,7 @@ describe('validationMessage', () => {
     })
     Swal.clickConfirm()
     setTimeout(() => {
-      expect(isVisible(Swal.getValidationMessage())).to.be.true
+      expect(isVisible(Swal.getValidationMessage())).to.equal(true)
       expect(Swal.getValidationMessage().textContent).to.equal('custom url validation message')
       done()
     }, TIMEOUT)
@@ -1397,7 +1462,7 @@ describe('clickConfirm()', () => {
   it('clickConfirm() should not fail if a popup is not visible', () => {
     SwalWithoutAnimation.fire()
     Swal.close()
-    expect(Swal.isVisible()).to.be.false
+    expect(Swal.isVisible()).to.equal(false)
     Swal.clickConfirm()
   })
 })
@@ -1407,7 +1472,7 @@ describe('close()', () => {
     Swal.fire({
       title: 'Swal.close() test',
       willClose: () => {
-        expect(Swal.getPopup().classList.contains('swal2-hide')).to.be.true
+        expect(Swal.getPopup().classList.contains('swal2-hide')).to.equal(true)
         done()
       },
     })
@@ -1429,7 +1494,7 @@ describe('close()', () => {
   it('should trigger willClose', (done) => {
     Swal.fire({
       willClose: () => {
-        expect(Swal.isVisible()).to.be.true
+        expect(Swal.isVisible()).to.equal(true)
         done()
       },
     })
@@ -1439,7 +1504,7 @@ describe('close()', () => {
   it('should trigger didClose', (done) => {
     SwalWithoutAnimation.fire({
       didClose: () => {
-        expect(Swal.isVisible()).to.be.false
+        expect(Swal.isVisible()).to.equal(false)
         done()
       },
     })
@@ -1449,15 +1514,15 @@ describe('close()', () => {
   it('should not fail when calling Swal.fire() inside didClose', (done) => {
     SwalWithoutAnimation.fire({
       didClose: () => {
-        expect(Swal.isVisible()).to.be.false
+        expect(Swal.isVisible()).to.equal(false)
         SwalWithoutAnimation.fire({
           input: 'text',
           didOpen: () => {
-            expect(Swal.getInput()).to.not.be.null
+            expect(Swal.getInput()).to.not.equal(null)
             done()
           },
         })
-        expect(Swal.isVisible()).to.be.true
+        expect(Swal.isVisible()).to.equal(true)
       },
     })
     Swal.close()
@@ -1467,7 +1532,7 @@ describe('close()', () => {
     Swal.fire({
       didClose: () => {
         Swal.close()
-        expect(Swal.isVisible()).to.be.false
+        expect(Swal.isVisible()).to.equal(false)
         done()
       },
     })
@@ -1645,7 +1710,7 @@ describe('getInput()', () => {
       input: 'text',
       didClose: () => {
         setTimeout(() => {
-          expect(Swal.getInput()).to.be.null
+          expect(Swal.getInput()).to.equal(null)
           done()
         }, TIMEOUT)
       },
@@ -1657,7 +1722,7 @@ describe('getInput()', () => {
     SwalWithoutAnimation.fire({
       input: 'text',
     }).then(() => {
-      expect(Swal.getInput()).to.not.be.null
+      expect(Swal.getInput()).to.not.equal(null)
       done()
     })
     Swal.close()
@@ -1667,10 +1732,10 @@ describe('getInput()', () => {
 describe('showLoading() and hideLoading()', () => {
   it('showLoading() and hideLoading()', () => {
     Swal.showLoading()
-    expect(Swal.getActions().classList.contains('swal2-loading')).to.be.true
+    expect(Swal.getActions().classList.contains('swal2-loading')).to.equal(true)
 
     Swal.hideLoading()
-    expect(Swal.getActions().classList.contains('swal2-loading')).to.be.false
+    expect(Swal.getActions().classList.contains('swal2-loading')).to.equal(false)
 
     Swal.fire({
       title: 'test loading state',
@@ -1678,26 +1743,26 @@ describe('showLoading() and hideLoading()', () => {
     })
 
     Swal.showLoading()
-    expect(isVisible(Swal.getActions())).to.be.true
-    expect(Swal.getActions().classList.contains('swal2-loading')).to.be.true
+    expect(isVisible(Swal.getActions())).to.equal(true)
+    expect(Swal.getActions().classList.contains('swal2-loading')).to.equal(true)
 
     Swal.hideLoading()
-    expect(isVisible(Swal.getActions())).to.be.false
-    expect(Swal.getActions().classList.contains('swal2-loading')).to.be.false
+    expect(isVisible(Swal.getActions())).to.equal(false)
+    expect(Swal.getActions().classList.contains('swal2-loading')).to.equal(false)
   })
 
   it('hideLoading()', () => {
     ensureClosed()
     Swal.hideLoading()
-    expect(Swal.isVisible()).to.be.false
+    expect(Swal.isVisible()).to.equal(false)
   })
 
   it('should open an empty popup with loader', () => {
     ensureClosed()
     Swal.showLoading()
-    expect(Swal.isVisible()).to.be.true
-    expect(Swal.getActions().classList.contains('swal2-loading')).to.be.true
-    expect(isVisible($('.swal2-loader'))).to.be.true
+    expect(Swal.isVisible()).to.equal(true)
+    expect(Swal.getActions().classList.contains('swal2-loading')).to.equal(true)
+    expect(isVisible($('.swal2-loader'))).to.equal(true)
     expect($('.swal2-loader').innerHTML).to.equal('')
   })
 
@@ -1706,14 +1771,14 @@ describe('showLoading() and hideLoading()', () => {
       showConfirmButton: false,
       loaderHtml: '<i>hi</i>',
       didOpen: () => {
-        expect(isHidden(Swal.getActions())).to.be.true
+        expect(isHidden(Swal.getActions())).to.equal(true)
         Swal.showLoading()
-        expect(isVisible(Swal.getActions())).to.be.true
-        expect(Swal.getActions().classList.contains('swal2-loading')).to.be.true
-        expect(isVisible($('.swal2-loader'))).to.be.true
+        expect(isVisible(Swal.getActions())).to.equal(true)
+        expect(Swal.getActions().classList.contains('swal2-loading')).to.equal(true)
+        expect(isVisible($('.swal2-loader'))).to.equal(true)
         expect($('.swal2-loader').innerHTML).to.equal('<i>hi</i>')
-        expect(isHidden(Swal.getConfirmButton())).to.be.true
-        expect(isHidden(Swal.getCancelButton())).to.be.true
+        expect(isHidden(Swal.getConfirmButton())).to.equal(true)
+        expect(isHidden(Swal.getCancelButton())).to.equal(true)
         done()
       },
     })
@@ -1727,8 +1792,8 @@ describe('getTimerLeft()', () => {
     })
     setTimeout(() => {
       const timerLeft = Swal.getTimerLeft()
-      expect(timerLeft > 0).to.be.true
-      expect(timerLeft < 1000).to.be.true
+      expect(timerLeft > 0).to.equal(true)
+      expect(timerLeft < 1000).to.equal(true)
       done()
     }, 1)
   })
@@ -1748,12 +1813,12 @@ describe('timer', () => {
     SwalWithoutAnimation.fire({
       timer: 500,
     })
-    expect(Swal.increaseTimer(400) > 0).to.be.true
+    expect(Swal.increaseTimer(400) > 0).to.equal(true)
     setTimeout(() => {
-      expect(Swal.isVisible()).to.be.true
+      expect(Swal.isVisible()).to.equal(true)
     }, 700)
     setTimeout(() => {
-      expect(Swal.isVisible()).to.be.false
+      expect(Swal.isVisible()).to.equal(false)
       done()
     }, 1000)
   })
@@ -1776,11 +1841,11 @@ describe('timer', () => {
     })
     Swal.stopTimer()
     setTimeout(() => {
-      expect(Swal.isVisible()).to.be.true
+      expect(Swal.isVisible()).to.equal(true)
       Swal.resumeTimer()
     }, 200)
     setTimeout(() => {
-      expect(Swal.isVisible()).to.be.false
+      expect(Swal.isVisible()).to.equal(false)
       done()
     }, 700)
   })
@@ -1793,7 +1858,7 @@ describe('timer', () => {
     Swal.resumeTimer()
     Swal.stopTimer()
     setTimeout(() => {
-      expect(Swal.isVisible()).to.be.true
+      expect(Swal.isVisible()).to.equal(true)
       done()
     }, 1000)
   })
@@ -1803,10 +1868,10 @@ describe('timer', () => {
       timer: 500,
     })
     setTimeout(() => {
-      expect(Swal.stopTimer() > 0).to.be.true
+      expect(Swal.stopTimer() > 0).to.equal(true)
     }, 50)
     setTimeout(() => {
-      expect(Swal.isVisible()).to.be.true
+      expect(Swal.isVisible()).to.equal(true)
       done()
     }, 750)
   })
@@ -1828,11 +1893,11 @@ describe('timer', () => {
     })
     Swal.toggleTimer()
     setTimeout(() => {
-      expect(Swal.isVisible()).to.be.true
+      expect(Swal.isVisible()).to.equal(true)
       Swal.toggleTimer()
     }, 700)
     setTimeout(() => {
-      expect(Swal.isVisible()).to.be.false
+      expect(Swal.isVisible()).to.equal(false)
       done()
     }, 2000)
   })
@@ -1850,9 +1915,9 @@ describe('timer', () => {
       timer: 200,
     })
     setTimeout(() => {
-      expect(Swal.isTimerRunning()).to.be.true
+      expect(Swal.isTimerRunning()).to.equal(true)
       Swal.stopTimer()
-      expect(!Swal.isTimerRunning()).to.be.true
+      expect(!Swal.isTimerRunning()).to.equal(true)
       done()
     }, 100)
   })
@@ -1866,7 +1931,7 @@ describe('timerProgressBar', () => {
     })
 
     const progressBar = document.querySelector('.swal2-timer-progress-bar')
-    expect(isVisible(progressBar)).to.be.true
+    expect(isVisible(progressBar)).to.equal(true)
   })
 
   it('should stop the animation of timer progress bar when timer is stopped', (done) => {
@@ -1939,8 +2004,8 @@ describe('global events and listeners', () => {
 
     SwalWithoutAnimation.fire({
       didOpen: () => {
-        expect(spyWillOpen1).to.be.called
-        expect(spyWillOpen2).to.be.called
+        expect(spyWillOpen1.called).to.equal(true)
+        expect(spyWillOpen2.called).to.equal(true)
         done()
       },
     })
@@ -1957,10 +2022,10 @@ describe('global events and listeners', () => {
 
     SwalWithoutAnimation.fire({
       didOpen: () => {
-        expect(spyConsoleError).to.be.calledOnce
+        expect(spyConsoleError.calledOnce).to.equal(true)
         const calls = spyConsoleError.getCalls()
         expect(calls[0].args[0].toString()).to.equal('Error: error from willOpen')
-        expect(spyDidOpen).to.be.called
+        expect(spyDidOpen.called).to.equal(true)
         done()
       },
     })
@@ -2018,8 +2083,8 @@ describe('global events and listeners', () => {
 
     SwalWithoutAnimation.fire({
       didOpen: () => {
-        expect(spyWillOpen).not.to.be.called
-        expect(spyDidOpen).not.to.be.called
+        expect(spyWillOpen.called).to.equal(false)
+        expect(spyDidOpen.called).to.equal(false)
         done()
       },
     })
@@ -2034,8 +2099,8 @@ describe('global events and listeners', () => {
 
     SwalWithoutAnimation.fire({
       didOpen: () => {
-        expect(spyWillOpen).not.to.be.called
-        expect(spyDidOpen).to.be.called
+        expect(spyWillOpen.called).to.equal(false)
+        expect(spyDidOpen.called).to.equal(true)
         done()
       },
     })
@@ -2051,8 +2116,8 @@ describe('global events and listeners', () => {
 
     SwalWithoutAnimation.fire({
       didOpen: () => {
-        expect(spyWillOpen1).not.to.be.called
-        expect(spyWillOpen2).to.be.called
+        expect(spyWillOpen1.called).to.equal(false)
+        expect(spyWillOpen2.called).to.equal(true)
         done()
       },
     })
@@ -2087,7 +2152,7 @@ describe('theme', () => {
     SwalWithoutAnimation.fire({
       theme: 'foo',
     })
-    expect(spy.calledWith(`SweetAlert2: Invalid theme "foo"`)).to.be.true
+    expect(spy.calledWith(`SweetAlert2: Invalid theme "foo"`)).to.equal(true)
   })
 })
 
@@ -2107,7 +2172,7 @@ describe('update()', () => {
       input: 'text',
       showConfirmButton: false,
       imageUrl: '/assets/swal2-logo.png',
-      preConfirm: () => console.log('1'), // eslint-disable-line no-console
+      preConfirm: () => console.log('1'),
     })
 
     Swal.update({
@@ -2123,7 +2188,7 @@ describe('update()', () => {
       cancelButtonText: 'New cancel button text',
       imageUrl: '/assets/swal2-logo.png',
       showCloseButton: true,
-      preConfirm: () => console.log('2'), // eslint-disable-line no-console
+      preConfirm: () => console.log('2'),
     })
 
     expect(window.getComputedStyle(Swal.getPopup()).backgroundColor).to.equal('rgb(0, 128, 0)')
@@ -2131,27 +2196,27 @@ describe('update()', () => {
     expect(Swal.getTitle().textContent).to.equal('New title')
     expect(Swal.getHtmlContainer().textContent).to.equal('New content')
 
-    expect(isVisible(Swal.getIcon())).to.be.true
+    expect(isVisible(Swal.getIcon())).to.equal(true)
     expect(Swal.getIcon()).to.equal($('.swal2-success'))
     expect(Swal.getIcon().style.color).to.equal('blue')
     expect(Swal.getIcon().style.borderColor).to.equal('blue')
 
-    expect(isVisible(Swal.getImage())).to.be.true
-    expect(Swal.getImage().src.indexOf('/assets/swal2-logo.png') > 0).to.be.true
+    expect(isVisible(Swal.getImage())).to.equal(true)
+    expect(Swal.getImage().src.indexOf('/assets/swal2-logo.png') > 0).to.equal(true)
 
-    expect(isVisible(Swal.getConfirmButton())).to.be.true
-    expect(isVisible(Swal.getCancelButton())).to.be.true
-    expect(isVisible(Swal.getDenyButton())).to.be.true
+    expect(isVisible(Swal.getConfirmButton())).to.equal(true)
+    expect(isVisible(Swal.getCancelButton())).to.equal(true)
+    expect(isVisible(Swal.getDenyButton())).to.equal(true)
     expect(Swal.getCancelButton().textContent).to.equal('New cancel button text')
     expect(Swal.getDenyButton().textContent).to.equal('New deny button text')
 
-    expect(isVisible(Swal.getCloseButton())).to.be.true
+    expect(isVisible(Swal.getCloseButton())).to.equal(true)
 
     setTimeout(() => {
       const spy = cy.spy(console, 'warn')
       Swal.clickConfirm()
-      expect(spy.calledWith('1')).to.be.false
-      expect(spy.calledWith('2')).to.be.true
+      expect(spy.calledWith('1')).to.equal(false)
+      expect(spy.calledWith('2')).to.equal(true)
     })
   })
 
@@ -2199,38 +2264,38 @@ describe('update()', () => {
       },
     })
 
-    expect(Swal.getContainer().classList.contains('container-class')).to.be.false
-    expect(Swal.getPopup().classList.contains('popup-class')).to.be.false
-    expect(Swal.getTitle().classList.contains('title-class')).to.be.false
-    expect(Swal.getCloseButton().classList.contains('close-button-class')).to.be.false
-    expect(Swal.getIcon().classList.contains('icon-class')).to.be.false
-    expect(Swal.getImage().classList.contains('image-class')).to.be.false
-    expect(Swal.getHtmlContainer().classList.contains('html-container-class')).to.be.false
-    expect(Swal.getInput().classList.contains('input-class')).to.be.false
-    expect(Swal.getActions().classList.contains('actions-class')).to.be.false
-    expect(Swal.getConfirmButton().classList.contains('confirm-button-class')).to.be.false
-    expect(Swal.getDenyButton().classList.contains('deny-button-class')).to.be.false
-    expect(Swal.getCancelButton().classList.contains('cancel-button-class')).to.be.false
-    expect(Swal.getFooter().classList.contains('footer-class')).to.be.false
+    expect(Swal.getContainer().classList.contains('container-class')).to.equal(false)
+    expect(Swal.getPopup().classList.contains('popup-class')).to.equal(false)
+    expect(Swal.getTitle().classList.contains('title-class')).to.equal(false)
+    expect(Swal.getCloseButton().classList.contains('close-button-class')).to.equal(false)
+    expect(Swal.getIcon().classList.contains('icon-class')).to.equal(false)
+    expect(Swal.getImage().classList.contains('image-class')).to.equal(false)
+    expect(Swal.getHtmlContainer().classList.contains('html-container-class')).to.equal(false)
+    expect(Swal.getInput().classList.contains('input-class')).to.equal(false)
+    expect(Swal.getActions().classList.contains('actions-class')).to.equal(false)
+    expect(Swal.getConfirmButton().classList.contains('confirm-button-class')).to.equal(false)
+    expect(Swal.getDenyButton().classList.contains('deny-button-class')).to.equal(false)
+    expect(Swal.getCancelButton().classList.contains('cancel-button-class')).to.equal(false)
+    expect(Swal.getFooter().classList.contains('footer-class')).to.equal(false)
 
-    expect(Swal.getContainer().classList.contains('container-class-NEW')).to.be.true
-    expect(Swal.getPopup().classList.contains('popup-class-NEW')).to.be.true
-    expect(Swal.getTitle().classList.contains('title-class-NEW')).to.be.true
-    expect(Swal.getCloseButton().classList.contains('close-button-class-NEW')).to.be.true
-    expect(Swal.getIcon().classList.contains('icon-class-NEW')).to.be.true
-    expect(Swal.getImage().classList.contains('image-class-NEW')).to.be.true
-    expect(Swal.getHtmlContainer().classList.contains('html-container-class-NEW')).to.be.true
-    expect(Swal.getInput().classList.contains('input-class-NEW')).to.be.true
-    expect(Swal.getActions().classList.contains('actions-class-NEW')).to.be.true
-    expect(Swal.getConfirmButton().classList.contains('confirm-button-class-NEW')).to.be.true
-    expect(Swal.getDenyButton().classList.contains('deny-button-class-NEW')).to.be.true
-    expect(Swal.getCancelButton().classList.contains('cancel-button-class-NEW')).to.be.true
-    expect(Swal.getFooter().classList.contains('footer-class-NEW')).to.be.true
+    expect(Swal.getContainer().classList.contains('container-class-NEW')).to.equal(true)
+    expect(Swal.getPopup().classList.contains('popup-class-NEW')).to.equal(true)
+    expect(Swal.getTitle().classList.contains('title-class-NEW')).to.equal(true)
+    expect(Swal.getCloseButton().classList.contains('close-button-class-NEW')).to.equal(true)
+    expect(Swal.getIcon().classList.contains('icon-class-NEW')).to.equal(true)
+    expect(Swal.getImage().classList.contains('image-class-NEW')).to.equal(true)
+    expect(Swal.getHtmlContainer().classList.contains('html-container-class-NEW')).to.equal(true)
+    expect(Swal.getInput().classList.contains('input-class-NEW')).to.equal(true)
+    expect(Swal.getActions().classList.contains('actions-class-NEW')).to.equal(true)
+    expect(Swal.getConfirmButton().classList.contains('confirm-button-class-NEW')).to.equal(true)
+    expect(Swal.getDenyButton().classList.contains('deny-button-class-NEW')).to.equal(true)
+    expect(Swal.getCancelButton().classList.contains('cancel-button-class-NEW')).to.equal(true)
+    expect(Swal.getFooter().classList.contains('footer-class-NEW')).to.equal(true)
   })
 
   it('isUpdatableParameter() method', () => {
-    expect(Swal.isUpdatableParameter('title')).to.be.true
-    expect(Swal.isUpdatableParameter('willOpen')).to.be.false
+    expect(Swal.isUpdatableParameter('title')).to.equal(true)
+    expect(Swal.isUpdatableParameter('willOpen')).to.equal(false)
   })
 
   it("should update instance's params", () => {
@@ -2259,9 +2324,9 @@ describe('update()', () => {
       icon: 'success',
       didOpen: () => {
         Swal.update({})
-        expect(Swal.getContainer().classList.contains('swal2-backdrop-show')).to.be.true
-        expect(Swal.getPopup().classList.contains('swal2-show')).to.be.true
-        expect(Swal.getIcon().classList.contains('swal2-icon-show')).to.be.true
+        expect(Swal.getContainer().classList.contains('swal2-backdrop-show')).to.equal(true)
+        expect(Swal.getPopup().classList.contains('swal2-show')).to.equal(true)
+        expect(Swal.getIcon().classList.contains('swal2-icon-show')).to.equal(true)
         done()
       },
     })
@@ -2328,7 +2393,7 @@ describe('update()', () => {
         spy.calledWith(
           `SweetAlert2: You're trying to update the closed or closing popup, that won't work. Use the update() method in preConfirm parameter or show a new popup.`
         )
-      ).to.be.true
+      ).to.equal(true)
       done()
     })
     Swal.clickConfirm()
@@ -2338,42 +2403,43 @@ describe('update()', () => {
     const spy = cy.spy(console, 'warn')
     SwalWithoutAnimation.fire()
     Swal.update({ theme: 'foo' })
-    expect(spy.calledWith(`SweetAlert2: Invalid theme "foo"`)).to.be.true
+    expect(spy.calledWith(`SweetAlert2: Invalid theme "foo"`)).to.equal(true)
   })
 })
 
 describe('Miscellaneous tests', function () {
   it('version is correct semver', () => {
-    expect(!!Swal.version.match(/\d+\.\d+\.\d+/)).to.be.true
+    expect(!!Swal.version.match(/\d+\.\d+\.\d+/)).to.equal(true)
   })
 
   it('modal shows up', () => {
     Swal.fire('Hello world!')
-    expect(Swal.isVisible()).to.be.true
+    expect(Swal.isVisible()).to.equal(true)
   })
 
   it('the icon is shown', () => {
     Swal.fire('', '', 'success')
-    expect(Swal.getIcon().classList.contains('swal2-success')).to.be.true
+    expect(Swal.getIcon().classList.contains('swal2-success')).to.equal(true)
   })
 
   it('should throw console warning about invalid params', () => {
     const spy = cy.spy(console, 'warn')
     Swal.fire({ invalidParam: 'oops' })
-    expect(spy.calledWith('SweetAlert2: Unknown parameter "invalidParam"')).to.be.true
+    expect(spy.calledWith('SweetAlert2: Unknown parameter "invalidParam"')).to.equal(true)
   })
 
   it('should throw console error about unexpected params', () => {
     const spy = cy.spy(console, 'error')
     Swal.fire('Hello world!', { icon: 'success' })
-    expect(spy.calledWith('SweetAlert2: Unexpected type of html! Expected "string" or "Element", got object')).to.be
-      .true
+    expect(spy.calledWith('SweetAlert2: Unexpected type of html! Expected "string" or "Element", got object')).to.equal(
+      true
+    )
   })
 
   it('should not throw console error about undefined params and treat them as empty strings', () => {
     const spy = cy.spy(console, 'error')
     Swal.fire(undefined, 'Hello world!', undefined)
-    expect(spy.notCalled).to.be.true
+    expect(spy.notCalled).to.equal(true)
   })
 
   it('should accept Elements as shorhand params', () => {
@@ -2388,26 +2454,26 @@ describe('Miscellaneous tests', function () {
 
   it('should show the popup with OK button in case of empty object passed as an argument', () => {
     Swal.fire({})
-    expect(isVisible(Swal.getConfirmButton())).to.be.true
-    expect(isHidden(Swal.getDenyButton())).to.be.true
-    expect(isHidden(Swal.getCancelButton())).to.be.true
+    expect(isVisible(Swal.getConfirmButton())).to.equal(true)
+    expect(isHidden(Swal.getDenyButton())).to.equal(true)
+    expect(isHidden(Swal.getCancelButton())).to.equal(true)
     expect(Swal.getTitle().textContent).to.equal('')
     expect(Swal.getHtmlContainer().textContent).to.equal('')
-    expect(isHidden(Swal.getFooter())).to.be.true
+    expect(isHidden(Swal.getFooter())).to.equal(true)
   })
 
   it('should show and hide title, content and footer when dynamically update their innerHTML', (done) => {
     Swal.fire({})
-    expect(isHidden(Swal.getTitle())).to.be.true
-    expect(isHidden(Swal.getHtmlContainer())).to.be.true
-    expect(isHidden(Swal.getFooter())).to.be.true
+    expect(isHidden(Swal.getTitle())).to.equal(true)
+    expect(isHidden(Swal.getHtmlContainer())).to.equal(true)
+    expect(isHidden(Swal.getFooter())).to.equal(true)
     Swal.getTitle().textContent = 'title'
     Swal.getHtmlContainer().textContent = 'content'
     Swal.getFooter().textContent = 'footer'
     setTimeout(() => {
-      expect(isVisible(Swal.getTitle())).to.be.true
-      expect(isVisible(Swal.getHtmlContainer())).to.be.true
-      expect(isVisible(Swal.getFooter())).to.be.true
+      expect(isVisible(Swal.getTitle())).to.equal(true)
+      expect(isVisible(Swal.getHtmlContainer())).to.equal(true)
+      expect(isVisible(Swal.getFooter())).to.equal(true)
       done()
     })
   })
@@ -2428,19 +2494,19 @@ describe('Miscellaneous tests', function () {
 
   it('heightAuto', () => {
     Swal.fire('I should set .swal2-height-auto class to html and body')
-    expect(document.documentElement.classList.contains('swal2-height-auto')).to.be.true
+    expect(document.documentElement.classList.contains('swal2-height-auto')).to.equal(true)
 
     Swal.fire({
       title: 'I am modeless and should not set .swal2-height-auto',
       backdrop: false,
     })
-    expect(document.documentElement.classList.contains('swal2-height-auto')).to.be.true
+    expect(document.documentElement.classList.contains('swal2-height-auto')).to.equal(true)
 
     Swal.fire({
       title: 'I am toast and should not set .swal2-height-auto',
       toast: true,
     })
-    expect(document.documentElement.classList.contains('swal2-height-auto')).to.be.true
+    expect(document.documentElement.classList.contains('swal2-height-auto')).to.equal(true)
   })
 
   it('getters', () => {
@@ -2460,7 +2526,7 @@ describe('Miscellaneous tests', function () {
       cancelButtonAriaLabel: 'Cancel button aria-label',
       footer: '<b>Footer</b>',
     })
-    expect(Swal.getImage().src.includes('/assets/swal2-logo.png')).to.be.true
+    expect(Swal.getImage().src.includes('/assets/swal2-logo.png')).to.equal(true)
     expect(Swal.getActions().textContent).to.equal('Confirm buttonDeny buttonCancel button')
     expect(Swal.getConfirmButton().innerText).to.equal('Confirm button')
     expect(Swal.getDenyButton().innerText).to.equal('Deny button')
@@ -2524,14 +2590,14 @@ describe('Miscellaneous tests', function () {
     Swal.fire('test disable/enable buttons')
 
     Swal.disableButtons()
-    expect(Swal.getConfirmButton().disabled).to.be.true
-    expect(Swal.getDenyButton().disabled).to.be.true
-    expect(Swal.getCancelButton().disabled).to.be.true
+    expect(Swal.getConfirmButton().disabled).to.equal(true)
+    expect(Swal.getDenyButton().disabled).to.equal(true)
+    expect(Swal.getCancelButton().disabled).to.equal(true)
 
     Swal.enableButtons()
-    expect(Swal.getConfirmButton().disabled).to.be.false
-    expect(Swal.getDenyButton().disabled).to.be.false
-    expect(Swal.getCancelButton().disabled).to.be.false
+    expect(Swal.getConfirmButton().disabled).to.equal(false)
+    expect(Swal.getDenyButton().disabled).to.equal(false)
+    expect(Swal.getCancelButton().disabled).to.equal(false)
   })
 
   it('reversed buttons', () => {
@@ -2565,7 +2631,7 @@ describe('Miscellaneous tests', function () {
       const box = Swal.getPopup().getBoundingClientRect()
       const delta = box.top - (box.bottom - box.height)
       // allow 1px difference, in case of uneven height
-      expect(Math.abs(delta) <= 1).to.be.true
+      expect(Math.abs(delta) <= 1).to.equal(true)
       done()
     })
   })
@@ -2586,7 +2652,7 @@ describe('Miscellaneous tests', function () {
     Swal.fire({
       title: 'willOpen test',
       willOpen: (modal) => {
-        expect(Swal.isVisible()).to.be.false
+        expect(Swal.isVisible()).to.equal(false)
         expect(Swal.getPopup()).to.equal(modal)
       },
     })
@@ -2615,16 +2681,16 @@ describe('Miscellaneous tests', function () {
       didRender,
     })
 
-    expect(didRender.calledOnce).to.be.true
+    expect(didRender.calledOnce).to.equal(true)
 
     // update the modal, causing a new render
     // the didRender hook should be called once again
     Swal.update({})
 
-    expect(didRender.calledTwice).to.be.true
+    expect(didRender.calledTwice).to.equal(true)
 
     // the modal element must always be passed to the didRender hook
-    expect(didRender.alwaysCalledWithExactly(Swal.getPopup())).to.be.true
+    expect(didRender.alwaysCalledWithExactly(Swal.getPopup())).to.equal(true)
   })
 
   it('didClose', (done) => {
@@ -2637,8 +2703,8 @@ describe('Miscellaneous tests', function () {
         willCloseFinished = true
       },
       didClose: () => {
-        expect(willCloseFinished).to.be.true
-        expect(Swal.getContainer()).to.be.null
+        expect(willCloseFinished).to.equal(true)
+        expect(Swal.getContainer()).to.equal(null)
         done()
       },
     })
@@ -2660,7 +2726,7 @@ describe('Miscellaneous tests', function () {
         done()
       },
     })
-    expect(firstPopupDestroyed).to.be.true
+    expect(firstPopupDestroyed).to.equal(true)
     Swal.getConfirmButton().click()
   })
 
@@ -2692,8 +2758,8 @@ describe('Miscellaneous tests', function () {
         })
       },
     }).then(() => {
-      expect(Swal.isVisible()).to.be.true
-      expect(Swal.getInput().classList.contains('on-close-swal')).to.be.true
+      expect(Swal.isVisible()).to.equal(true)
+      expect(Swal.getInput().classList.contains('on-close-swal')).to.equal(true)
       done()
     })
 
@@ -2719,6 +2785,17 @@ describe('Miscellaneous tests', function () {
     })
   })
 
+  it('allowEscapeKey: false', () => {
+    SwalWithoutAnimation.fire({
+      allowEscapeKey: false,
+    })
+    const event1 = triggerKeydownEvent(Swal.getPopup(), 'Escape')
+    expect(event1.defaultPrevented).to.equal(true)
+    SwalWithoutAnimation.close()
+    const event2 = triggerKeydownEvent(document.body, 'Escape')
+    expect(event2.defaultPrevented).to.equal(false)
+  })
+
   it('allowEscapeKey as a function', (done) => {
     let functionWasCalled = false
 
@@ -2735,7 +2812,7 @@ describe('Miscellaneous tests', function () {
 
         setTimeout(() => {
           expect(functionWasCalled).to.equal(true)
-          expect(Swal.isVisible()).to.be.true
+          expect(Swal.isVisible()).to.equal(true)
 
           done()
         })
@@ -2758,7 +2835,7 @@ describe('Miscellaneous tests', function () {
     })
 
     const closeButton = Swal.getCloseButton()
-    expect(isVisible(closeButton)).to.be.true
+    expect(isVisible(closeButton)).to.equal(true)
     expect(closeButton.getAttribute('aria-label')).to.equal('Close this dialog')
     closeButton.click()
   })
@@ -2872,25 +2949,25 @@ describe('Miscellaneous tests', function () {
   })
 
   it('params validation', () => {
-    expect(Swal.isValidParameter('title')).to.be.true
-    expect(Swal.isValidParameter('foobar')).to.be.false
+    expect(Swal.isValidParameter('title')).to.equal(true)
+    expect(Swal.isValidParameter('foobar')).to.equal(false)
   })
 
   it('addition and removal of backdrop', () => {
     Swal.fire({ backdrop: false })
-    expect(document.body.classList.contains('swal2-no-backdrop')).to.be.true
-    expect(document.documentElement.classList.contains('swal2-no-backdrop')).to.be.true
+    expect(document.body.classList.contains('swal2-no-backdrop')).to.equal(true)
+    expect(document.documentElement.classList.contains('swal2-no-backdrop')).to.equal(true)
     Swal.fire({ title: 'test' })
-    expect(document.body.classList.contains('swal2-no-backdrop')).to.be.false
-    expect(document.documentElement.classList.contains('swal2-no-backdrop')).to.be.false
+    expect(document.body.classList.contains('swal2-no-backdrop')).to.equal(false)
+    expect(document.documentElement.classList.contains('swal2-no-backdrop')).to.equal(false)
   })
 
   it('footer', () => {
     Swal.fire({ title: 'Modal with footer', footer: 'I am footer' })
-    expect(isVisible(Swal.getFooter())).to.be.true
+    expect(isVisible(Swal.getFooter())).to.equal(true)
 
     Swal.fire('Modal w/o footer')
-    expect(isHidden(Swal.getFooter())).to.be.true
+    expect(isHidden(Swal.getFooter())).to.equal(true)
   })
 
   it('visual appearance', () => {
@@ -2924,7 +3001,7 @@ describe('Miscellaneous tests', function () {
       params[key] = null
     })
     Swal.fire(params)
-    expect(Swal.isVisible()).to.be.true
+    expect(Swal.isVisible()).to.equal(true)
   })
 
   it('backdrop accepts css background param', () => {
@@ -2939,7 +3016,7 @@ describe('Miscellaneous tests', function () {
       title: 'I have a custom backdrop',
       backdrop,
     })
-    expect(Swal.getContainer().style.background.includes(backdrop)).to.be.true
+    expect(Swal.getContainer().style.background.includes(backdrop)).to.equal(true)
   })
 
   it('Popup shows with swal2 classes used in html', (done) => {
@@ -2947,7 +3024,7 @@ describe('Miscellaneous tests', function () {
       html: '<span class="swal2-cancel"></span>',
     })
     setTimeout(() => {
-      expect(Swal.getPopup().classList.contains('swal2-show')).to.be.true
+      expect(Swal.getPopup().classList.contains('swal2-show')).to.equal(true)
       done()
     }, SHOW_CLASS_TIMEOUT)
   })
@@ -2999,7 +3076,7 @@ describe('Outside click', () => {
     Swal.getContainer().click()
     Swal.getContainer().click()
     setTimeout(() => {
-      expect(didClose.calledOnce).to.be.true
+      expect(didClose.calledOnce).to.equal(true)
       done()
     }, 500)
   })
@@ -3009,7 +3086,7 @@ describe('Outside click', () => {
     simulateMouseEvent(1, 1, 'mousedown')
     simulateMouseEvent(window.innerWidth / 2, window.innerHeight / 2, 'mouseup')
     setTimeout(() => {
-      expect(Swal.isVisible()).to.be.true
+      expect(Swal.isVisible()).to.equal(true)
       done()
     })
   })
@@ -3019,7 +3096,7 @@ describe('Outside click', () => {
     simulateMouseEvent(window.innerWidth / 2, window.innerHeight / 2, 'mousedown')
     simulateMouseEvent(1, 1, 'mouseup')
     setTimeout(() => {
-      expect(Swal.isVisible()).to.be.true
+      expect(Swal.isVisible()).to.equal(true)
       done()
     })
   })
@@ -3029,13 +3106,13 @@ describe('RTL', () => {
   it('container should have .swal2-rtl in case of <body dir="rtl">', () => {
     document.body.setAttribute('dir', 'rtl')
     SwalWithoutAnimation.fire('hi')
-    expect(Swal.getContainer().classList.contains('swal2-rtl')).to.be.true
+    expect(Swal.getContainer().classList.contains('swal2-rtl')).to.equal(true)
   })
 
   it('container should have .swal2-rtl in case of <body style="direction: rtl">', () => {
     document.body.style.direction = 'rtl'
     SwalWithoutAnimation.fire('hi')
-    expect(Swal.getContainer().classList.contains('swal2-rtl')).to.be.true
+    expect(Swal.getContainer().classList.contains('swal2-rtl')).to.equal(true)
   })
 
   it('container should have .swal2-rtl in case of <div dir="rtl">', () => {
@@ -3043,7 +3120,7 @@ describe('RTL', () => {
     document.body.appendChild(targetDiv)
     targetDiv.setAttribute('dir', 'rtl')
     SwalWithoutAnimation.fire({ target: targetDiv })
-    expect(Swal.getContainer().classList.contains('swal2-rtl')).to.be.true
+    expect(Swal.getContainer().classList.contains('swal2-rtl')).to.equal(true)
   })
 
   it('container should have .swal2-rtl in case of <div style="direction: rtl">', () => {
@@ -3051,7 +3128,7 @@ describe('RTL', () => {
     document.body.appendChild(targetDiv)
     targetDiv.style.direction = 'rtl'
     SwalWithoutAnimation.fire({ target: targetDiv })
-    expect(Swal.getContainer().classList.contains('swal2-rtl')).to.be.true
+    expect(Swal.getContainer().classList.contains('swal2-rtl')).to.equal(true)
   })
 })
 
@@ -3135,11 +3212,11 @@ describe('Inputs', () => {
     Swal.getInput().value = 'a'
     Swal.clickConfirm()
     setTimeout(() => {
-      expect(isVisible(Swal.getValidationMessage())).to.be.true
+      expect(isVisible(Swal.getValidationMessage())).to.equal(true)
       // Chrome: Please match the format requested.
       // Firefox: Please match the requested format.
       // Safari: Match the requested format.
-      expect(Swal.getValidationMessage().textContent.indexOf('atch the') !== -1).to.be.true
+      expect(Swal.getValidationMessage().textContent.indexOf('atch the') !== -1).to.equal(true)
       done()
     }, TIMEOUT)
   })
@@ -3155,8 +3232,8 @@ describe('Inputs', () => {
     Swal.getInput().value = invalidEmailAddress
     Swal.clickConfirm()
     setTimeout(() => {
-      expect(isVisible(Swal.getValidationMessage())).to.be.true
-      expect(Swal.getValidationMessage().textContent.indexOf('Invalid email address') !== -1).to.be.true
+      expect(isVisible(Swal.getValidationMessage())).to.equal(true)
+      expect(Swal.getValidationMessage().textContent.indexOf('Invalid email address') !== -1).to.equal(true)
 
       Swal.getInput().value = validEmailAddress
       triggerKeydownEvent(Swal.getInput(), 'Enter')
@@ -3173,8 +3250,8 @@ describe('Inputs', () => {
     Swal.getInput().value = invalidUrl
     Swal.clickConfirm()
     setTimeout(() => {
-      expect(isVisible(Swal.getValidationMessage())).to.be.true
-      expect(Swal.getValidationMessage().textContent.indexOf('Invalid URL') !== -1).to.be.true
+      expect(isVisible(Swal.getValidationMessage())).to.equal(true)
+      expect(Swal.getValidationMessage().textContent.indexOf('Invalid URL') !== -1).to.equal(true)
 
       Swal.getInput().value = validUrl
       triggerKeydownEvent(Swal.getInput(), 'Enter')
@@ -3193,8 +3270,8 @@ describe('Inputs', () => {
     })
     expect(Swal.getInput().value).to.equal('')
     const placeholderOption = Swal.getInput().querySelector('option')
-    expect(placeholderOption.disabled).to.be.true
-    expect(placeholderOption.selected).to.be.true
+    expect(placeholderOption.disabled).to.equal(true)
+    expect(placeholderOption.selected).to.equal(true)
     expect(placeholderOption.textContent).to.equal('Choose a number')
     Swal.getInput().value = selected
     Swal.clickConfirm()
@@ -3212,8 +3289,8 @@ describe('Inputs', () => {
     })
     expect(Swal.getInput().value).to.equal('')
     const placeholderOption = Swal.getInput().querySelector('option')
-    expect(placeholderOption.disabled).to.be.true
-    expect(placeholderOption.selected).to.be.true
+    expect(placeholderOption.disabled).to.equal(true)
+    expect(placeholderOption.selected).to.equal(true)
     expect(placeholderOption.textContent).to.equal('Choose an item')
     Swal.getInput().value = selected
     Swal.clickConfirm()
@@ -3234,8 +3311,8 @@ describe('Inputs', () => {
     })
     expect(Swal.getInput().value).to.equal('')
     const placeholderOption = Swal.getInput().querySelector('option')
-    expect(placeholderOption.disabled).to.be.true
-    expect(placeholderOption.selected).to.be.true
+    expect(placeholderOption.disabled).to.equal(true)
+    expect(placeholderOption.selected).to.equal(true)
     expect(placeholderOption.textContent).to.equal('Choose an item')
     Swal.getInput().value = selected
     Swal.clickConfirm()
@@ -3287,7 +3364,7 @@ describe('Inputs', () => {
       done()
     })
     const checkbox = $('.swal2-checkbox input')
-    expect(isVisible(checkbox)).to.be.true
+    expect(isVisible(checkbox)).to.equal(true)
     checkbox.checked = true
     Swal.clickConfirm()
   })
@@ -3296,8 +3373,8 @@ describe('Inputs', () => {
     Swal.fire({ input: 'range', inputAttributes: { min: 1, max: 10 }, inputValue: 5 })
     const input = Swal.getInput()
     const output = $('.swal2-range output')
-    expect(isVisible(input)).to.be.true
-    expect(isVisible(output)).to.be.true
+    expect(isVisible(input)).to.equal(true)
+    expect(isVisible(output)).to.equal(true)
     expect(input.getAttribute('min')).to.equal('1')
     expect(input.getAttribute('max')).to.equal('10')
     expect(input.value).to.equal('5')
@@ -3496,8 +3573,9 @@ describe('Inputs', () => {
       returnInputValueOnDeny: true,
     })
     Swal.clickDeny()
-    expect(spy.calledWith('SweetAlert2: The "input" parameter is needed to be set when using returnInputValueOnDeny'))
-      .to.be.true
+    expect(
+      spy.calledWith('SweetAlert2: The "input" parameter is needed to be set when using returnInputValueOnDeny')
+    ).to.equal(true)
   })
 
   it('disable/enable input', () => {
@@ -3510,9 +3588,9 @@ describe('Inputs', () => {
     })
 
     Swal.disableInput()
-    expect(Swal.getInput().disabled).to.be.true
+    expect(Swal.getInput().disabled).to.equal(true)
     Swal.enableInput()
-    expect(Swal.getInput().disabled).to.be.false
+    expect(Swal.getInput().disabled).to.equal(false)
 
     Swal.fire({
       input: 'radio',
@@ -3524,19 +3602,20 @@ describe('Inputs', () => {
 
     Swal.disableInput()
     Array.from($('.swal2-radio').querySelectorAll('radio')).forEach((radio) => {
-      expect(radio.disabled).to.be.true
+      expect(radio.disabled).to.equal(true)
     })
     Swal.enableInput()
     Array.from($('.swal2-radio').querySelectorAll('radio')).forEach((radio) => {
-      expect(radio.disabled).to.be.false
+      expect(radio.disabled).to.equal(false)
     })
   })
 
   it('should throw console error about unexpected type of InputOptions', () => {
     const spy = cy.spy(console, 'error')
     Swal.fire({ input: 'select', inputOptions: 'invalid-input-options' })
-    expect(spy.calledWith('SweetAlert2: Unexpected type of inputOptions! Expected object, Map or Promise, got string'))
-      .to.be.true
+    expect(
+      spy.calledWith('SweetAlert2: Unexpected type of inputOptions! Expected object, Map or Promise, got string')
+    ).to.equal(true)
   })
 
   it('multiple inputs', (done) => {
@@ -3575,12 +3654,12 @@ describe('Validation', () => {
     Swal.getInput().value = 'blah-blah'
     Swal.clickConfirm()
     setTimeout(() => {
-      expect(Swal.getConfirmButton().disabled).to.be.false
-      expect(Swal.getDenyButton().disabled).to.be.false
-      expect(Swal.getCancelButton().disabled).to.be.false
-      expect(isVisible(Swal.getValidationMessage())).to.be.true
+      expect(Swal.getConfirmButton().disabled).to.equal(false)
+      expect(Swal.getDenyButton().disabled).to.equal(false)
+      expect(Swal.getCancelButton().disabled).to.equal(false)
+      expect(isVisible(Swal.getValidationMessage())).to.equal(true)
       expect(Swal.getValidationMessage().textContent).to.equal('Invalid phone number')
-      expect(Swal.getValidationMessage().classList.contains('my-validation-message')).to.be.true
+      expect(Swal.getValidationMessage().classList.contains('my-validation-message')).to.equal(true)
       Swal.getInput().value = '123-456-7890'
       Swal.clickConfirm()
     }, TIMEOUT)
@@ -3590,16 +3669,16 @@ describe('Validation', () => {
     const inputValidator = (value) => Promise.resolve(!value && 'no falsy values')
 
     SwalWithoutAnimation.fire({ input: 'text', inputValidator })
-    expect(isHidden(Swal.getValidationMessage())).to.be.true
+    expect(isHidden(Swal.getValidationMessage())).to.equal(true)
     setTimeout(() => {
       const initialModalHeight = Swal.getPopup().offsetHeight
 
       Swal.clickConfirm()
       setTimeout(() => {
-        expect(isVisible(Swal.getValidationMessage())).to.be.true
+        expect(isVisible(Swal.getValidationMessage())).to.equal(true)
         expect(Swal.getValidationMessage().textContent).to.equal('no falsy values')
         expect(Swal.getInput().getAttribute('aria-invalid')).to.equal('true')
-        expect(Swal.getPopup().offsetHeight > initialModalHeight).to.be.true
+        expect(Swal.getPopup().offsetHeight > initialModalHeight).to.equal(true)
 
         Swal.getInput().value = 'blah-blah'
 
@@ -3609,9 +3688,9 @@ describe('Validation', () => {
         event.initEvent('input', true, true)
         Swal.getInput().dispatchEvent(event)
 
-        expect(isHidden(Swal.getValidationMessage())).to.be.true
-        expect(Swal.getInput().getAttribute('aria-invalid')).to.be.null
-        expect(Swal.getPopup().offsetHeight === initialModalHeight).to.be.true
+        expect(isHidden(Swal.getValidationMessage())).to.equal(true)
+        expect(Swal.getInput().getAttribute('aria-invalid')).to.equal(null)
+        expect(Swal.getPopup().offsetHeight === initialModalHeight).to.equal(true)
         done()
       }, TIMEOUT)
     }, TIMEOUT)
@@ -3629,7 +3708,7 @@ describe('Validation', () => {
     setTimeout(() => {
       Swal.clickConfirm()
       setTimeout(() => {
-        expect(isVisible(Swal.getValidationMessage())).to.be.true
+        expect(isVisible(Swal.getValidationMessage())).to.equal(true)
         expect(Swal.getValidationMessage().textContent).to.equal('no falsy values')
         done()
       }, TIMEOUT)
@@ -3638,14 +3717,14 @@ describe('Validation', () => {
 
   it('default email validator: test@example.com', (done) => {
     defaultInputValidators.email('test@example.com').then((data) => {
-      expect(data).be.undefined
+      expect(data).to.equal(undefined)
       done()
     })
   })
 
   it(`default email validator: o'test@example.com`, (done) => {
     defaultInputValidators.email(`o'test@example.com`).then((data) => {
-      expect(data).be.undefined
+      expect(data).to.equal(undefined)
       done()
     })
   })
@@ -3659,21 +3738,21 @@ describe('Validation', () => {
 
   it('default URL validator: https://google.com', (done) => {
     defaultInputValidators.url('https://google.com').then((data) => {
-      expect(data).be.undefined
+      expect(data).to.equal(undefined)
       done()
     })
   })
 
   it('default URL validator: http://g.co', (done) => {
     defaultInputValidators.url('http://g.co').then((data) => {
-      expect(data).be.undefined
+      expect(data).to.equal(undefined)
       done()
     })
   })
 
   it('default URL validator: http://foo.localhost/', (done) => {
     defaultInputValidators.url('http://foo.localhost/').then((data) => {
-      expect(data).be.undefined
+      expect(data).to.equal(undefined)
       done()
     })
   })
@@ -3768,7 +3847,7 @@ describe('inputValue', () => {
       })
     }
     showPopupWithInput()
-    expect(spy.notCalled).to.be.true
+    expect(spy.notCalled).to.equal(true)
   })
 
   it('should throw console error when inputValue as a Promise rejects', (done) => {
@@ -3780,7 +3859,9 @@ describe('inputValue', () => {
       }),
       didOpen: () => {
         setTimeout(() => {
-          expect(spy.calledWith('SweetAlert2: Error in inputValue promise: Error: input promise rejected')).to.be.true
+          expect(spy.calledWith('SweetAlert2: Error in inputValue promise: Error: input promise rejected')).to.equal(
+            true
+          )
           done()
         }, TIMEOUT)
       },
@@ -3794,7 +3875,7 @@ describe('inputValue', () => {
       spy.calledWith(
         'SweetAlert2: Unexpected type of inputValue! Expected "string", "number" or "Promise", got "undefined"'
       )
-    ).to.be.true
+    ).to.equal(true)
   })
 
   it('should throw console warning about unexpected type of inputValue for input: textarea', () => {
@@ -3804,13 +3885,13 @@ describe('inputValue', () => {
       spy.calledWith(
         'SweetAlert2: Unexpected type of inputValue! Expected "string", "number" or "Promise", got "object"'
       )
-    ).to.be.true
+    ).to.equal(true)
   })
 
   it('inputValue can be null', () => {
     const spy = cy.spy(console, 'error')
     Swal.fire({ input: 'select', inputOptions: { a: 'a' }, inputValue: null })
-    expect(spy.notCalled).to.be.true
+    expect(spy.notCalled).to.equal(true)
   })
 })
 
@@ -3823,8 +3904,8 @@ describe('Mixins', () => {
         MySwal.clickConfirm()
       },
     })
-    expect(swal instanceof MySwal).to.be.true
-    expect(swal instanceof Swal).to.be.true
+    expect(swal instanceof MySwal).to.equal(true)
+    expect(swal instanceof Swal).to.equal(true)
     swal.then((result) => {
       expect(result).to.eql({
         value: true,
@@ -3861,8 +3942,8 @@ describe('Mixins', () => {
       .fire({
         didOpen: () => {
           setTimeout(() => {
-            expect(Swal.getContainer().classList.contains('backdrop-custom-show-class')).to.be.true
-            expect(Swal.getPopup().classList.contains('i-should-be-overridden')).to.be.false
+            expect(Swal.getContainer().classList.contains('backdrop-custom-show-class')).to.equal(true)
+            expect(Swal.getPopup().classList.contains('i-should-be-overridden')).to.equal(false)
             done()
           }, SHOW_CLASS_TIMEOUT)
         },
@@ -3874,8 +3955,8 @@ describe('Mixins', () => {
       showClass: { backdrop: 'backdrop-custom-show-class' },
       didOpen: () => {
         setTimeout(() => {
-          expect(Swal.getContainer().classList.contains('backdrop-custom-show-class')).to.be.true
-          expect(Swal.getPopup().classList.contains('i-should-be-overridden')).to.be.false
+          expect(Swal.getContainer().classList.contains('backdrop-custom-show-class')).to.equal(true)
+          expect(Swal.getPopup().classList.contains('i-should-be-overridden')).to.equal(false)
           done()
         }, SHOW_CLASS_TIMEOUT)
       },
@@ -4164,11 +4245,11 @@ const ToastWithoutAnimation = SwalWithoutAnimation.mixin({ toast: true })
 describe('Toast', () => {
   it('.swal2-toast-shown', () => {
     Toast.fire()
-    expect(document.body.classList.contains('swal2-toast-shown')).to.be.true
-    expect(document.documentElement.classList.contains('swal2-toast-shown')).to.be.true
+    expect(document.body.classList.contains('swal2-toast-shown')).to.equal(true)
+    expect(document.documentElement.classList.contains('swal2-toast-shown')).to.equal(true)
     Swal.fire()
-    expect(document.body.classList.contains('swal2-toast-shown')).to.be.false
-    expect(document.documentElement.classList.contains('swal2-toast-shown')).to.be.false
+    expect(document.body.classList.contains('swal2-toast-shown')).to.equal(false)
+    expect(document.documentElement.classList.contains('swal2-toast-shown')).to.equal(false)
   })
 
   it('should throw console warnings for incompatible parameters', () => {
@@ -4178,7 +4259,7 @@ describe('Toast', () => {
     Toast.fire({
       allowOutsideClick: true,
     })
-    expect(spy.calledWith('SweetAlert2: The parameter "allowOutsideClick" is incompatible with toasts')).to.be.true
+    expect(spy.calledWith('SweetAlert2: The parameter "allowOutsideClick" is incompatible with toasts')).to.equal(true)
 
     console.warn = _consoleWarn
   })
@@ -4205,7 +4286,7 @@ describe('Toast', () => {
     })
     Toast.getPopup().click()
     setTimeout(() => {
-      expect(Toast.isVisible()).to.be.true
+      expect(Toast.isVisible()).to.equal(true)
       done()
     })
   })
@@ -4218,7 +4299,7 @@ describe('Toast', () => {
     })
     Toast.getPopup().click()
     setTimeout(() => {
-      expect(Toast.isVisible()).to.be.true
+      expect(Toast.isVisible()).to.equal(true)
       done()
     })
   })
@@ -4229,8 +4310,8 @@ describe('Toast', () => {
         Toast.close()
       },
       didClose: () => {
-        expect(document.body.classList.contains('swal2-shown')).to.be.false
-        expect(document.body.classList.contains('swal2-toast-shown')).to.be.false
+        expect(document.body.classList.contains('swal2-shown')).to.equal(false)
+        expect(document.body.classList.contains('swal2-toast-shown')).to.equal(false)
         done()
       },
     })
@@ -4284,8 +4365,8 @@ describe('API', () => {
   })
 
   it('ways to instantiate', () => {
-    expect(new Swal('foo') instanceof Swal).to.be.true
-    expect(Swal.fire('foo') instanceof Swal).to.be.true
+    expect(new Swal('foo') instanceof Swal).to.equal(true)
+    expect(Swal.fire('foo') instanceof Swal).to.equal(true)
   })
 
   it('instance properties and methods', () => {
@@ -4353,14 +4434,14 @@ describe('bindClickHandler', () => {
     document.body.appendChild(buttonTriggerToast)
 
     buttonTriggerPopup.click()
-    expect(Swal.isVisible()).to.be.true
-    expect(Swal.getPopup().classList.contains('swal2-toast')).to.be.false
+    expect(Swal.isVisible()).to.equal(true)
+    expect(Swal.getPopup().classList.contains('swal2-toast')).to.equal(false)
     expect(Swal.getTitle().innerHTML).to.equal('Are you sure?')
 
     Swal.close()
     imgInsideButtonTriggerToast.click()
-    expect(Swal.isVisible()).to.be.true
-    expect(Swal.getPopup().classList.contains('swal2-toast')).to.be.true
+    expect(Swal.isVisible()).to.equal(true)
+    expect(Swal.getPopup().classList.contains('swal2-toast')).to.equal(true)
     expect(Swal.getTitle().innerHTML).to.equal('Are you sure?')
 
     document.body.removeChild(buttonTriggerPopup)

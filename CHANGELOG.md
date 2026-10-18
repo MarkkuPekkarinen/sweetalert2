@@ -1,3 +1,253 @@
+## [11.26.25](https://github.com/sweetalert2/sweetalert2/compare/v11.26.24...v11.26.25) (2026-05-23)
+
+
+### Bug Fixes
+
+* icon animation in Firefox ([#2945](https://github.com/sweetalert2/sweetalert2/issues/2945)) ([8a01895](https://github.com/sweetalert2/sweetalert2/commit/8a01895cf0b531b42f52279d0b70e897da0ba40e))
+
+## [11.26.24](https://github.com/sweetalert2/sweetalert2/compare/v11.26.23...v11.26.24) (2026-03-20)
+
+
+### Bug Fixes
+
+* Tab navigation with iframe in Firefox ([#2933](https://github.com/sweetalert2/sweetalert2/issues/2933)) ([2b997bb](https://github.com/sweetalert2/sweetalert2/commit/2b997bbedcd7cf8a62b815fa76db81a1c94fd1ee))
+
+## [11.26.23](https://github.com/sweetalert2/sweetalert2/compare/v11.26.22...v11.26.23) (2026-03-16)
+
+
+### Bug Fixes
+
+* simplify unnecessarily complex code ([#2930](https://github.com/sweetalert2/sweetalert2/issues/2930)) ([369b9b1](https://github.com/sweetalert2/sweetalert2/commit/369b9b165cd6f6579fb98c43459ecc69cfa5b12b))
+
+## [11.26.22](https://github.com/sweetalert2/sweetalert2/compare/v11.26.21...v11.26.22) (2026-03-08)
+
+
+### Bug Fixes
+
+* workaround scrolling of tall popup with backdrop: false in iOS ([#2925](https://github.com/sweetalert2/sweetalert2/issues/2925)) ([59d194d](https://github.com/sweetalert2/sweetalert2/commit/59d194d45628b2ef1ca8abdb05a9b8286382a94b))
+
+## [11.26.21](https://github.com/sweetalert2/sweetalert2/compare/v11.26.20...v11.26.21) (2026-02-28)
+
+
+### Bug Fixes
+
+* preserve focus set inside preConfirm/preDeny ([#2922](https://github.com/sweetalert2/sweetalert2/issues/2922)) ([09485a6](https://github.com/sweetalert2/sweetalert2/commit/09485a6792fba158ee8f3da0d62de01bea666357))
+
+## [11.26.20](https://github.com/sweetalert2/sweetalert2/compare/v11.26.19...v11.26.20) (2026-02-20)
+
+
+### Bug Fixes
+
+* preserve focus across disableButtons/hideLoading cycle ([#2916](https://github.com/sweetalert2/sweetalert2/issues/2916)) ([8de9630](https://github.com/sweetalert2/sweetalert2/commit/8de9630dcee71e1e90a59024e3507caee3000722))
+
+## [11.26.19](https://github.com/sweetalert2/sweetalert2/compare/v11.26.18...v11.26.19) (2026-02-19)
+
+
+### Bug Fixes
+
+* allowEnterKey should focus popup so Esc will work ([#2915](https://github.com/sweetalert2/sweetalert2/issues/2915)) ([5f7a514](https://github.com/sweetalert2/sweetalert2/commit/5f7a514f6b1d12e52a74b4d3f0284aa63b253419))
+
+## [11.26.18](https://github.com/sweetalert2/sweetalert2/compare/v11.26.17...v11.26.18) (2026-02-02)
+
+
+### Bug Fixes
+
+* types in argsToParams.js ([#2912](https://github.com/sweetalert2/sweetalert2/issues/2912)) ([11e6344](https://github.com/sweetalert2/sweetalert2/commit/11e63448396da1cc6260cfbb4b5e61d754e01453))
+
+## [11.26.17](https://github.com/sweetalert2/sweetalert2/compare/v11.26.16...v11.26.17) (2025-12-22)
+
+
+### Bug Fixes
+
+* add last strict type and enable TypeScript strict mode ([#2904](https://github.com/sweetalert2/sweetalert2/issues/2904)) ([201c0f6](https://github.com/sweetalert2/sweetalert2/commit/201c0f68b81519643c07316e42fb7221fc052acb))
+
+## [11.26.16](https://github.com/sweetalert2/sweetalert2/compare/v11.26.15...v11.26.16) (2025-12-21)
+
+
+### Bug Fixes
+
+* strict types in 6 core files ([#2903](https://github.com/sweetalert2/sweetalert2/issues/2903)) ([330e879](https://github.com/sweetalert2/sweetalert2/commit/330e879704f850ee2219b92ca3160d8e7d253bf2))
+
+## [11.26.15](https://github.com/sweetalert2/sweetalert2/compare/v11.26.14...v11.26.15) (2025-12-21)
+
+
+### Bug Fixes
+
+* strict types in core modules ([#2902](https://github.com/sweetalert2/sweetalert2/issues/2902)) ([a43f5f9](https://github.com/sweetalert2/sweetalert2/commit/a43f5f9e0e8ce6913b573bbfab5114d6a5b65e97))
+
+## [11.26.14](https://github.com/sweetalert2/sweetalert2/compare/v11.26.13...v11.26.14) (2025-12-21)
+
+
+### Bug Fixes
+
+* strict types in DOM and template utilities ([#2901](https://github.com/sweetalert2/sweetalert2/issues/2901)) ([71167cd](https://github.com/sweetalert2/sweetalert2/commit/71167cda9b15b2a66c54e10439ba772779cf15b9))
+
+## [11.26.13](https://github.com/sweetalert2/sweetalert2/compare/v11.26.12...v11.26.13) (2025-12-21)
+
+
+### Bug Fixes
+
+* strict types in renderInput.js ([#2900](https://github.com/sweetalert2/sweetalert2/issues/2900)) ([0b279a3](https://github.com/sweetalert2/sweetalert2/commit/0b279a362a5353198463b5d54fbf86eaa6c5d9fe))
+
+## [11.26.12](https://github.com/sweetalert2/sweetalert2/compare/v11.26.11...v11.26.12) (2025-12-20)
+
+
+### Bug Fixes
+
+* strict types in iosFix, EventEmitter, and draggable utils ([#2898](https://github.com/sweetalert2/sweetalert2/issues/2898)) ([de40d05](https://github.com/sweetalert2/sweetalert2/commit/de40d050e2f3b0c6e126f02b118807544f6cca88))
+* strict types in openPopup.js ([#2897](https://github.com/sweetalert2/sweetalert2/issues/2897)) ([ce23587](https://github.com/sweetalert2/sweetalert2/commit/ce2358771ed5b9ff588faf766e0ad967f078d719))
+
+## [11.26.11](https://github.com/sweetalert2/sweetalert2/compare/v11.26.10...v11.26.11) (2025-12-20)
+
+
+### Bug Fixes
+
+* remove unnecessary `|| this` fallback in buttons-handlers.js ([#2896](https://github.com/sweetalert2/sweetalert2/issues/2896)) ([6cb382d](https://github.com/sweetalert2/sweetalert2/commit/6cb382db9526596b78838e5a23fcef24ed8642e7))
+
+## [11.26.10](https://github.com/sweetalert2/sweetalert2/compare/v11.26.9...v11.26.10) (2025-12-13)
+
+
+### Bug Fixes
+
+* try node lts ([4ba4ce2](https://github.com/sweetalert2/sweetalert2/commit/4ba4ce29938078194c7bc6bc0a8c2277efe8a3d9))
+
+## [11.26.9](https://github.com/sweetalert2/sweetalert2/compare/v11.26.8...v11.26.9) (2025-12-13)
+
+
+### Bug Fixes
+
+* stop using semantic-release/changelog ([2e11ae5](https://github.com/sweetalert2/sweetalert2/commit/2e11ae581f99920ca8592e142c41dca85649cde5))
+* try secrets.GITHUB_TOKEN ([bc0b46e](https://github.com/sweetalert2/sweetalert2/commit/bc0b46ec34d3a67e9d41a4d079d35e1ded3289e8))
+* use npx semantic-release (directly, without action) ([0f9c4d2](https://github.com/sweetalert2/sweetalert2/commit/0f9c4d249d7e459264eb181da04e27a4d22ebc2b))
+
+## [11.26.8](https://github.com/sweetalert2/sweetalert2/compare/v11.26.7...v11.26.8) (2025-12-13)
+
+
+### Bug Fixes
+
+* disable tests for now ([83a65fb](https://github.com/sweetalert2/sweetalert2/commit/83a65fb074b06e87725e09ba8c257dae1be148c0))
+
+## [11.26.7](https://github.com/sweetalert2/sweetalert2/compare/v11.26.6...v11.26.7) (2025-12-13)
+
+
+### Bug Fixes
+
+* add permission for PRs ([9b70c48](https://github.com/sweetalert2/sweetalert2/commit/9b70c486bca10915789d7b80ca9c3f0bb753bce2))
+
+## [11.26.6](https://github.com/sweetalert2/sweetalert2/compare/v11.26.5...v11.26.6) (2025-12-13)
+
+
+### Bug Fixes
+
+* add permission for issues ([744cfd4](https://github.com/sweetalert2/sweetalert2/commit/744cfd449721a97b8a680a7fa8c48b1c23ef1d63))
+
+## [11.26.5](https://github.com/sweetalert2/sweetalert2/compare/v11.26.4...v11.26.5) (2025-12-13)
+
+
+### Bug Fixes
+
+* add AGENTS.md ([f093780](https://github.com/sweetalert2/sweetalert2/commit/f09378020107dfedd327af86ec244e385528510d))
+* add missing permissiong for trusted publishing ([8307543](https://github.com/sweetalert2/sweetalert2/commit/8307543348bde8f4870fb65b4998b188d88326c7))
+* upgrade semantic-release-action to v6 (for trusted publishing) ([3acf7de](https://github.com/sweetalert2/sweetalert2/commit/3acf7deacb4643822d01829794a188463473c317))
+
+## [11.26.4](https://github.com/sweetalert2/sweetalert2/compare/v11.26.3...v11.26.4) (2025-12-06)
+
+
+### Bug Fixes
+
+* draggable in RTL ([#2888](https://github.com/sweetalert2/sweetalert2/issues/2888)) ([879ec39](https://github.com/sweetalert2/sweetalert2/commit/879ec3943c7c2a36f993aefe4006bac0bcd9fe5f))
+
+## [11.26.3](https://github.com/sweetalert2/sweetalert2/compare/v11.26.2...v11.26.3) (2025-10-17)
+
+
+### Bug Fixes
+
+* Swal.DismissReason type ([#2884](https://github.com/sweetalert2/sweetalert2/issues/2884)) ([b7f5ab6](https://github.com/sweetalert2/sweetalert2/commit/b7f5ab6be837e7ed43cb48adf7fbe904643ee24a))
+
+## [11.26.2](https://github.com/sweetalert2/sweetalert2/compare/v11.26.1...v11.26.2) (2025-10-12)
+
+
+### Bug Fixes
+
+* DismissReason type, ESLint warnings ([#2882](https://github.com/sweetalert2/sweetalert2/issues/2882)) ([c5af0cf](https://github.com/sweetalert2/sweetalert2/commit/c5af0cf40e5e1c81d9f2d91ae6ee3e7541d33c77))
+
+## [11.26.1](https://github.com/sweetalert2/sweetalert2/compare/v11.26.0...v11.26.1) (2025-10-10)
+
+
+### Bug Fixes
+
+* backdrop blinking when a new swal is opened right after another one ([#2880](https://github.com/sweetalert2/sweetalert2/issues/2880)) ([767548e](https://github.com/sweetalert2/sweetalert2/commit/767548e921caccbf95dbd931f3793dfa57048eae))
+
+# [11.26.0](https://github.com/sweetalert2/sweetalert2/compare/v11.25.1...v11.26.0) (2025-10-10)
+
+
+### Features
+
+* add Bootstrap 5 theme ([#2879](https://github.com/sweetalert2/sweetalert2/issues/2879)) ([0368db4](https://github.com/sweetalert2/sweetalert2/commit/0368db438ebb852650efdae78926292875c5d553))
+
+## [11.25.1](https://github.com/sweetalert2/sweetalert2/compare/v11.25.0...v11.25.1) (2025-10-09)
+
+
+### Bug Fixes
+
+* replace $swal2-outline-color SCSS variable with literal value ([#2878](https://github.com/sweetalert2/sweetalert2/issues/2878)) ([7a63dad](https://github.com/sweetalert2/sweetalert2/commit/7a63dadd896228c8e7f6fbf33e1e9bc7702736af))
+
+# [11.25.0](https://github.com/sweetalert2/sweetalert2/compare/v11.24.1...v11.25.0) (2025-10-08)
+
+
+### Features
+
+* add Material UI theme ([#2876](https://github.com/sweetalert2/sweetalert2/issues/2876)) ([14c1392](https://github.com/sweetalert2/sweetalert2/commit/14c1392da3769fa9e1f1fef28a678ae8c4590659))
+
+## [11.24.1](https://github.com/sweetalert2/sweetalert2/compare/v11.24.0...v11.24.1) (2025-10-07)
+
+
+### Bug Fixes
+
+* make swal-show and swal-hide animations less fancy ([#2875](https://github.com/sweetalert2/sweetalert2/issues/2875)) ([98288c1](https://github.com/sweetalert2/sweetalert2/commit/98288c1cf0a483d387cb568e7942492c5644cbe8))
+
+# [11.24.0](https://github.com/sweetalert2/sweetalert2/compare/v11.23.0...v11.24.0) (2025-10-06)
+
+
+### Features
+
+* add bootstrap-4 theme ([#2874](https://github.com/sweetalert2/sweetalert2/issues/2874)) ([8fdd6aa](https://github.com/sweetalert2/sweetalert2/commit/8fdd6aa24b12ed5d7833b0b66a33a322f34924bb))
+
+# [11.23.0](https://github.com/sweetalert2/sweetalert2/compare/v11.22.4...v11.23.0) (2025-09-04)
+
+
+### Features
+
+* replace deprecated word-wrap with overflow-wrap ([2667a49](https://github.com/sweetalert2/sweetalert2/commit/2667a49f423a86015224a4010422bc7ed3208b16))
+
+## [11.22.4](https://github.com/sweetalert2/sweetalert2/compare/v11.22.3...v11.22.4) (2025-08-14)
+
+
+### Bug Fixes
+
+* remove protestware ([#2847](https://github.com/sweetalert2/sweetalert2/issues/2847)) ([be65518](https://github.com/sweetalert2/sweetalert2/commit/be65518580110645f1506ce0ddb92a3ad3cc60fd))
+
+## [11.22.3](https://github.com/sweetalert2/sweetalert2/compare/v11.22.2...v11.22.3) (2025-08-08)
+
+
+### Bug Fixes
+
+* timer progressbar color for dark theme ([#2844](https://github.com/sweetalert2/sweetalert2/issues/2844)) ([54bdd47](https://github.com/sweetalert2/sweetalert2/commit/54bdd47f4a888fcaf886a13118ffe11b987ea6af))
+
+## [11.22.2](https://github.com/sweetalert2/sweetalert2/compare/v11.22.1...v11.22.2) (2025-06-29)
+
+
+### Bug Fixes
+
+* simplify success icon when animation: false ([#2836](https://github.com/sweetalert2/sweetalert2/issues/2836)) ([affbbf5](https://github.com/sweetalert2/sweetalert2/commit/affbbf5c22cb2ba345c363c4c62717d052a774ff))
+
+## [11.22.1](https://github.com/sweetalert2/sweetalert2/compare/v11.22.0...v11.22.1) (2025-06-23)
+
+
+### Bug Fixes
+
+* always prevent default esc when swal is shown ([#2834](https://github.com/sweetalert2/sweetalert2/issues/2834)) ([4782601](https://github.com/sweetalert2/sweetalert2/commit/478260131fcb253cbb91a674313f1395bd1739e6))
+
 # [11.22.0](https://github.com/sweetalert2/sweetalert2/compare/v11.21.2...v11.22.0) (2025-05-25)
 
 
@@ -242,7 +492,7 @@
 
 ### Bug Fixes
 
-* upgrade to eslint 9 ([#2748](https://github.com/sweetalert2/sweetalert2/issues/2748)) ([6696b81](https://github.com/sweetalert2/sweetalert2/commit/6696b81f40584268c66025b0a57d444c087d5287))
+* upgrade to slint 9 ([#2748](https://github.com/sweetalert2/sweetalert2/issues/2748)) ([6696b81](https://github.com/sweetalert2/sweetalert2/commit/6696b81f40584268c66025b0a57d444c087d5287))
 
 ## [11.12.3](https://github.com/sweetalert2/sweetalert2/compare/v11.12.2...v11.12.3) (2024-07-19)
 
